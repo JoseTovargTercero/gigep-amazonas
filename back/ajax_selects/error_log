@@ -1,0 +1,2 @@
+[29-Mar-2024 09:06:46 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:45:27 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17

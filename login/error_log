@@ -1,0 +1,61 @@
+[28-Mar-2024 10:16:20 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 10:16:46 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 10:16:46 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/login/logout.php on line 3
+[28-Mar-2024 10:16:55 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 17:59:06 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:32:37 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:44:18 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:44:18 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/login/logout.php on line 3
+[29-Mar-2024 08:44:22 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:51:19 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:51:19 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/login/logout.php on line 3
+[29-Mar-2024 08:51:26 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:15 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:15 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/login/logout.php on line 3
+[29-Mar-2024 08:52:22 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:39:14 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:39:14 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/login/logout.php on line 3
+[29-Mar-2024 09:39:23 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:45:41 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:45:41 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/login/logout.php on line 3
+[29-Mar-2024 09:45:58 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 14:30:09 UTC] PHP Warning:  include(../../../c-sigep.php): failed to open stream: No such file or directory in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 3
+[29-Mar-2024 14:30:09 UTC] PHP Warning:  include(): Failed opening '../../../c-sigep.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 3
+[29-Mar-2024 14:30:09 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 6
+[29-Mar-2024 14:30:09 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 6
+[29-Mar-2024 14:30:09 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 7
+[29-Mar-2024 14:30:09 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 7
+[29-Mar-2024 14:30:09 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 49
+[29-Mar-2024 14:30:09 UTC] PHP Warning:  mysqli_prepare() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 49
+[29-Mar-2024 14:30:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on null in /home/gitcomco/sigep-amazonas.com/login/validate.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 50
+[29-Mar-2024 14:31:02 UTC] PHP Warning:  include(../../c-sigep.php): failed to open stream: No such file or directory in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 3
+[29-Mar-2024 14:31:02 UTC] PHP Warning:  include(): Failed opening '../../c-sigep.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 3
+[29-Mar-2024 14:31:02 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 6
+[29-Mar-2024 14:31:02 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 6
+[29-Mar-2024 14:31:02 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 7
+[29-Mar-2024 14:31:02 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 7
+[29-Mar-2024 14:31:02 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 49
+[29-Mar-2024 14:31:02 UTC] PHP Warning:  mysqli_prepare() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 49
+[29-Mar-2024 14:31:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on null in /home/gitcomco/sigep-amazonas.com/login/validate.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 50
+[29-Mar-2024 14:31:13 UTC] PHP Warning:  include(../../c-sigep.php): failed to open stream: No such file or directory in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 3
+[29-Mar-2024 14:31:13 UTC] PHP Warning:  include(): Failed opening '../../c-sigep.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 3
+[29-Mar-2024 14:31:13 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 6
+[29-Mar-2024 14:31:13 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 6
+[29-Mar-2024 14:31:13 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 7
+[29-Mar-2024 14:31:13 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 7
+[29-Mar-2024 14:31:13 UTC] PHP Notice:  Undefined variable: conexion in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 49
+[29-Mar-2024 14:31:13 UTC] PHP Warning:  mysqli_prepare() expects parameter 1 to be mysqli, null given in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 49
+[29-Mar-2024 14:31:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on null in /home/gitcomco/sigep-amazonas.com/login/validate.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/gitcomco/sigep-amazonas.com/login/validate.php on line 50
+[29-Mar-2024 10:32:02 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/c-sigep.php on line 17
+[29-Mar-2024 10:33:38 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 10:33:38 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/login/logout.php on line 3
+[29-Mar-2024 10:33:50 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17

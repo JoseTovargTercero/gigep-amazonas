@@ -1,0 +1,82 @@
+[28-Mar-2024 10:16:46 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 10:17:00 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 10:17:07 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 10:17:10 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 10:17:22 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: u_id in /home/gitcomco/sigep-amazonas.com/back/config/funcione_globales.php on line 8
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: sa in /home/gitcomco/sigep-amazonas.com/back/config/funcione_globales.php on line 38
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: u_nivel in /home/gitcomco/sigep-amazonas.com/public/produc/user_notification.php on line 5
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: u_nivel in /home/gitcomco/sigep-amazonas.com/public/produc/user_notification.php on line 5
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: u_nivel in /home/gitcomco/sigep-amazonas.com/public/produc/user_notification.php on line 5
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: u_id in /home/gitcomco/sigep-amazonas.com/public/produc/user_notification.php on line 9
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: u_id in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php on line 65
+[28-Mar-2024 17:58:44 America/Manaus] PHP Notice:  Undefined index: sa in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php on line 67
+[28-Mar-2024 17:58:44 America/Manaus] PHP Fatal error:  Uncaught Error: Call to a member function execute() on bool in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php:76
+Stack trace:
+#0 /home/gitcomco/sigep-amazonas.com/public/produc/user_notification.php(63): require()
+#1 {main}
+  thrown in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php on line 76
+[28-Mar-2024 17:59:06 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:32:37 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:33:26 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:33:35 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:44:22 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:44:25 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:49:53 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:49:53 America/Manaus] PHP Notice:  Undefined variable: sec_Servicios in /home/gitcomco/sigep-amazonas.com/public/produc/go_adm_planes.php on line 134
+[29-Mar-2024 08:49:53 America/Manaus] PHP Notice:  Undefined variable: sec_Económico_productivo in /home/gitcomco/sigep-amazonas.com/public/produc/go_adm_planes.php on line 138
+[29-Mar-2024 08:49:53 America/Manaus] PHP Notice:  Undefined variable: sec_Social in /home/gitcomco/sigep-amazonas.com/public/produc/go_adm_planes.php on line 142
+[29-Mar-2024 08:51:26 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:51:58 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:22 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:29 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:31 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:36 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:36 America/Manaus] PHP Notice:  Undefined variable: sec_Servicios in /home/gitcomco/sigep-amazonas.com/public/produc/go_adm_planes.php on line 134
+[29-Mar-2024 08:52:36 America/Manaus] PHP Notice:  Undefined variable: sec_Económico_productivo in /home/gitcomco/sigep-amazonas.com/public/produc/go_adm_planes.php on line 138
+[29-Mar-2024 08:52:36 America/Manaus] PHP Notice:  Undefined variable: sec_Social in /home/gitcomco/sigep-amazonas.com/public/produc/go_adm_planes.php on line 142
+[29-Mar-2024 08:52:38 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:52:57 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:53:04 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:53:12 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:53:42 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:55:18 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:55:20 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:57:47 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 08:57:58 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:07:00 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:13:27 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:13:41 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:14:17 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:14:20 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:25:17 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:33:51 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:36:19 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:36:46 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:39:23 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:39:35 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:44:17 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:45:03 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:45:15 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:45:58 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:46:05 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:50:56 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:50:58 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 09:50:59 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/c-sigep.php on line 17
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: u_id in /home/gitcomco/sigep-amazonas.com/back/config/funcione_globales.php on line 8
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: sa in /home/gitcomco/sigep-amazonas.com/back/config/funcione_globales.php on line 38
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: u_nivel in /home/gitcomco/sigep-amazonas.com/public/produc/user_profile.php on line 5
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: u_nivel in /home/gitcomco/sigep-amazonas.com/public/produc/user_profile.php on line 5
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: u_nivel in /home/gitcomco/sigep-amazonas.com/public/produc/user_profile.php on line 5
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: u_id in /home/gitcomco/sigep-amazonas.com/public/produc/user_profile.php on line 9
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: u_id in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php on line 65
+[29-Mar-2024 10:29:56 America/Manaus] PHP Notice:  Undefined index: sa in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php on line 67
+[29-Mar-2024 10:29:56 America/Manaus] PHP Fatal error:  Uncaught Error: Call to a member function execute() on bool in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php:76
+Stack trace:
+#0 /home/gitcomco/sigep-amazonas.com/public/produc/user_profile.php(72): require()
+#1 {main}
+  thrown in /home/gitcomco/sigep-amazonas.com/public/includes/menu.php on line 76
+[29-Mar-2024 10:32:03 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/c-sigep.php on line 17
+[29-Mar-2024 10:33:50 America/Manaus] PHP Notice:  session_start(): A session had already been started - ignoring in /home/gitcomco/sigep-amazonas.com/back/config/conexion.php on line 17
