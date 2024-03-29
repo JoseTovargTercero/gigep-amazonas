@@ -1,7 +1,15 @@
 <?php
 
-$usuario = 'ricardo_s';
-$contrasena = 'rQW2ByFPB9Y+';
+
+
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+	$usuario = 'root';
+	$contrasena = '';
+  }else {
+	$usuario = 'ricardo_s';
+	$contrasena = 'rQW2ByFPB9Y+';
+  }
+
 $baseDeDatos = 'bd_epa_';
 
 
