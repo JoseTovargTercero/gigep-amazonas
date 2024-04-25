@@ -1,5 +1,10 @@
 <?php 
 
+
+
+
+
+
 $stmt = mysqli_prepare($conexion, "SELECT * FROM `go_planes` WHERE ano = ?");
 $stmt->bind_param('s', $var);
 $stmt->execute();
@@ -24,6 +29,7 @@ $stmt2 -> close();
 
 
 
+$cantidadCritica = contar( "SELECT COUNT(*) FROM productos WHERE stock<='$stockCritico' AND activo='0'" );
 
 /* */
 /* */
@@ -62,4 +68,23 @@ $stmt_o->close();
 
 header("Location: ../../public/index.php");
 
+
+
+/*
+
+
+
+include('configuracion.php'); 
+
+--
+production
+include('../../configurar/configuracion.php'); 
+
+
+
+
+
+    $nombreUsuario = $_SESSION['nombre'];
+    
+*/
 ?>

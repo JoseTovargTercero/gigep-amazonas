@@ -467,10 +467,10 @@ $stmta->close();
                                   </thead>
                                   <tbody>';
                           while ($row = $resulta->fetch_assoc()) {
-                            $id = $row['id'];
+                            $id_v = $row['id'];
                             echo '<tr>
                                     <td>
-                                      <select id="porcentaje_' . $id . '" class="form-control ">
+                                      <select id="porcentaje_' . $id_v . '" class="form-control ">
                                       <option value="' . $row['porcentaje'] . '">' . $row['porcentaje'] . '%</option>
                                         <option value="">Seleccione</option>
                                         <option value="100">100%</option>
@@ -486,10 +486,10 @@ $stmta->close();
                                       </select>
                                     </td>
                                     <td>
-                                      <input type="text" id="etiqueta_' . $id . '" value="' . $row['etiqueta'] . '" class="form-control ">
+                                      <input type="text" id="etiqueta_' . $id_v . '" value="' . $row['etiqueta'] . '" class="form-control ">
                                     </td>
                                     <td>
-                                      <button value="' . $row['etiqueta'] . '" onclick="vidaN(\'' . $id . '\')" class="btn btn-outline-primary ">Actualizar</button>
+                                      <button value="' . $row['etiqueta'] . '" onclick="vidaN(\'' . $id_v . '\')" class="btn btn-outline-primary ">Actualizar</button>
                                     </td>
                                   </tr>';
                           }
@@ -655,7 +655,7 @@ $stmta->close();
                             $resulta = $stmta->get_result();
                             if ($resulta->num_rows > 0) {
                               while ($row = $resulta->fetch_assoc()) {
-                                $id = $row['id_r'];
+                                $id_vvv = $row['id_r'];
                                 if ($row['costo_reparacion'] != '') {
                                   $totalCost += $row['costo_reparacion'];
                                 }
@@ -698,10 +698,10 @@ $stmta->close();
                                             <div class="dropdown-menu p-2">';
 
                                   if ($empresa == $_SESSION["u_ente_id"]) {
-                                    echo ' <a class="dropdown-item" onclick="repo_solucion(\'' . $id . '\')"><i class="bx bx-check-circle me-2"></i> Reportar solución de la falla</a>';
+                                    echo ' <a class="dropdown-item" onclick="repo_solucion(\'' . $id_vvv . '\')"><i class="bx bx-check-circle me-2"></i> Reportar solución de la falla</a>';
                                   }
 
-                                  echo ' <a class="dropdown-item" onclick="ver_repuestos(\'' . $id . '\')"><i class="bx bx-wrench me-2"></i> Ver repuestos necesarios</a>
+                                  echo ' <a class="dropdown-item" onclick="ver_repuestos(\'' . $id_vvv . '\')"><i class="bx bx-wrench me-2"></i> Ver repuestos necesarios</a>
                                             </div>
                                           </div>';
                                 }
