@@ -559,8 +559,6 @@ $stmta->close();
                               },
                               cache: false,
                               success: function(msg) {
-                                alert(msg)
-                                return
                                 $(".container-loader").hide();
                                 // actualizar campos
                                 if (msg.trim() == 'ok') {
