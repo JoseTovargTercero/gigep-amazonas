@@ -559,13 +559,12 @@ $stmta->close();
                               },
                               cache: false,
                               success: function(msg) {
-                                alert(msg)
                                 return
                                 $(".container-loader").hide();
                                 // actualizar campos
-                                if (msg.trim() == 'ok') {
+                             //   if (msg.trim() == 'ok') {
                                   toast_s('success', 'Actualizado correctamente')
-                                }
+                              //  }
 
                               }
                             }).fail(function(jqXHR, textStatus, errorThrown) {
