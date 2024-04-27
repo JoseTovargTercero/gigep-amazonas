@@ -10,12 +10,6 @@ if ($_SESSION["u_nivel"]) {
   $group_hide = $_POST["group_hide"];
 
 
-
-//// FALTA
-//// FALTA
-//// FALTA
-//// FALTA
-//// FALTA
 //// FALTA
 //// FALTA
 

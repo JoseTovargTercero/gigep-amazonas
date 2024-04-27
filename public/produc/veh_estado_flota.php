@@ -196,6 +196,12 @@ if ($_SESSION["u_nivel"] == 2 || $_SESSION["u_nivel"] == 3) {
                             }
                           }
                         }
+
+                        echo "
+                      </div>
+                      </div>
+                      </div>
+                      ";
                         $stmt->close();
 
                         $contador = 1;
@@ -283,46 +289,41 @@ if ($_SESSION["u_nivel"] == 2 || $_SESSION["u_nivel"] == 3) {
                     </div>
                   </div>
                 </div>
-              </div>
-
-
-
-            </div>
 
 
 
 
 
-            <div class="row">
+                <div class="row">
 
-            <?php
-            $re = contar("SELECT count(*) FROM `veh_repuestos` WHERE status='0' AND tipo='1'");
+                  <?php
+                  $re = contar("SELECT count(*) FROM `veh_repuestos` WHERE status='0' AND tipo='1'");
 
-            if ($_SESSION["u_nivel"] == 1 && $re != 0) { ?>
-              <div class="col-lg-6 mb-3">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <h5>Compra de repuestos</h5>
-                  </div>
-                  <div class="card-body">
+                  if ($_SESSION["u_nivel"] == 1 && $re != 0) { ?>
+                    <div class="col-lg-6 mb-3">
+                      <div class="card h-100">
+                        <div class="card-header">
+                          <h5>Compra de repuestos</h5>
+                        </div>
+                        <div class="card-body">
 
-                    <small class="text-light fw-semibold">Lista de repuestos necesarios</small>
-                    <div class="demo-inline-spacing mt-3 mb-3">
-                      <div class="list-group">
+                          <small class="text-light fw-semibold">Lista de repuestos necesarios</small>
+                          <div class="demo-inline-spacing mt-3 mb-3">
+                            <div class="list-group">
 
-                        <?php
-                        $stmt = mysqli_prepare($conexion, "SELECT veh_repuestos.id, veh_partes.insumo, veh_repuestos.cantidad, veh_vehiculos.modelo, system_users.u_ente FROM `veh_repuestos`
+                              <?php
+                              $stmt = mysqli_prepare($conexion, "SELECT veh_repuestos.id, veh_partes.insumo, veh_repuestos.cantidad, veh_vehiculos.modelo, system_users.u_ente FROM `veh_repuestos`
                         LEFT JOIN veh_partes ON veh_partes.id_i=veh_repuestos.repuesto
                         LEFT JOIN veh_reporte_fallas ON veh_reporte_fallas.id_r=veh_repuestos.falla_id
                         LEFT JOIN veh_vehiculos ON veh_vehiculos.id=veh_reporte_fallas.vehiculo
                         LEFT JOIN system_users ON system_users.u_id=veh_vehiculos.empresa_id
                          WHERE veh_repuestos.status='0' AND veh_repuestos.tipo='1'");
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        if ($result->num_rows > 0) {
-                          while ($row = $result->fetch_assoc()) {
-                            $id = $row['id'];
-                            echo '<label class="list-group-item d-flex w-100 justify-content-between">
+                              $stmt->execute();
+                              $result = $stmt->get_result();
+                              if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                  $id = $row['id'];
+                                  echo '<label class="list-group-item d-flex w-100 justify-content-between">
 
                                   <span>
                                   <input class="form-check-input me-1" onclick="addRepuesto(\'' . $id . '\')" type="checkbox" value="">
@@ -334,135 +335,82 @@ if ($_SESSION["u_nivel"] == 2 || $_SESSION["u_nivel"] == 3) {
 
 
                                   </label>';
-                          }
-                        }
-                        $stmt->close();
+                                }
+                              }
+                              $stmt->close();
 
 
-                        ?>
+                              ?>
+                            </div>
+                          </div>
+
+
+                          <div class="divider divider-primary">
+                            <div class="divider-text">Datos de la compra</div>
+                          </div>
+
+
+                          <div class="mb-3">
+                            <label for="nombre_compra">Identificador de la compra</label>
+                            <input type="text" id="nombre_compra" class="form-control">
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="fecha">Fecha de compra</label>
+                            <input type="date" id="fecha" class="form-control" onchange="verify(this.value)">
+                          </div>
+
+                          <div class="text-end"><button class="btn btn-primary" onclick="nuevaCompraRepuestos()">Guardar</button></div>
+
+
+
+                        </div>
                       </div>
                     </div>
-
-
-                    <div class="divider divider-primary">
-                      <div class="divider-text">Datos de la compra</div>
-                    </div>
-
-
-                    <div class="mb-3">
-                      <label for="nombre_compra">Identificador de la compra</label>
-                      <input type="text" id="nombre_compra" class="form-control">
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="fecha">Fecha de compra</label>
-                      <input type="date" id="fecha" class="form-control" onchange="verify(this.value)">
-                    </div>
-
-                    <div class="text-end"><button class="btn btn-primary" onclick="nuevaCompraRepuestos()">Guardar</button></div>
+                  <?php } ?>
 
 
 
-                  </div>
-                </div>
-              </div>
-            <?php } ?>
+                  <?php
+                  if ($re != 0 && $_SESSION['u_nivel'] == 1) {
+                    $col = 'col-lg-12';
+                  } else {
+                    $col = 'col-lg-6';
+                  }
+                  ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="col-lg-6 mb-3">
-                <div class="card h-100">
-                 
-                  <div class="card-header  d-flex justify-content-between">
-                    <h5>Compra de repuestos</h5>
-
-
-                    <div class="dropdown">
-                      <button class="btn p-0" type="button" id="deliveryPerformance" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bx bx-dots-vertical-rounded"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="deliveryPerformance">
-
-
-                     <a class="dropdown-item pointer" ><i class="bx bx-detail me-2"></i>hola</a>
-
-
-
+                  <div class="<?php echo $col ?> mb-3" style="display: none;">
+                    <div class="card h-100">
+                      <div class="card-header">
+                        Vehículos
                       </div>
-                    </div>
+                      <div class="card-body">
 
 
-                  </div>
-                  <div class="card-body">
+                        <div class="">
+                          <table class="table" id="tableVehiculos">
+                            <thead class="border-top">
+                              <tr>
+                                <th>Vehículo</th>
+                                <th>Empresa</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
 
 
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quis rem velit veritatis nemo, veniam ratione, exercitationem nostrum sed atque vitae vel quae! Voluptatibus, ducimus? Suscipit quidem repudiandae ipsam delectus?
-
-
-
-
-                  </div>
-                </div>
-              </div>
-
-
-
-
-
-
-
-
-            <?php
-            if ($re != 0 && $_SESSION['u_nivel'] == 1) {
-              $col = 'col-lg-12';
-            } else {
-              $col = 'col-lg-6';
-            }
-            ?>
-
-            <div class="<?php echo $col ?> mb-3">
-              <div class="card h-100">
-                <div class="card-header">
-                  Vehiculos
-                </div>
-                <div class="card-body">
-
-
-                  <div class="">
-                    <table class="table" id="tableVehiculos">
-                      <thead class="border-top">
-                        <tr>
-                          <th>Vehículo</th>
-                          <th>Empresa</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-
-
-                        <?php
-                        $stmt = mysqli_prepare($conexion, "SELECT * FROM `veh_vehiculos`
+                              <?php
+                              $stmt = mysqli_prepare($conexion, "SELECT * FROM `veh_vehiculos`
                                       LEFT JOIN system_users ON system_users.u_id = veh_vehiculos.empresa_id
                                       WHERE id!='' $extra");
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        if ($result->num_rows > 0) {
-                          while ($row = $result->fetch_assoc()) {
-                            $id = $row['id'];
-                            $falla = contar("SELECT count(*) FROM veh_reporte_fallas WHERE vehiculo='$id' AND status='0'");
+                              $stmt->execute();
+                              $result = $stmt->get_result();
+                              if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                  $id = $row['id'];
+                                  $falla = contar("SELECT count(*) FROM veh_reporte_fallas WHERE vehiculo='$id' AND status='0'");
 
-                            echo '<tr>
+                                  echo '<tr>
                                             <td class="sorting_1">
                                             <div class="d-flex justify-content-start align-items-center user-name">
                                               <div class="avatar-wrapper">
@@ -473,19 +421,28 @@ if ($_SESSION["u_nivel"] == 2 || $_SESSION["u_nivel"] == 3) {
                                           </td>
                                           <td>' . $row['u_ente'] . '</td>
                                           <td>';
-                            if ($falla != 0) {
-                              echo '<button class="btn btn-outline-primary"  onclick="informe(' . $id . ')"><i class="bx bx-detail me-2"></i>Informe</button>';
-                            }
-                            echo '
+                                  if ($falla != 0) {
+                                    echo '<button class="btn btn-outline-primary"  onclick="informe(' . $id . ')"><i class="bx bx-detail me-2"></i>Informe</button>';
+                                  }
+                                  echo '
                                           </td>
                                             </tr>';
-                          }
-                        }
-                        $stmt->close();
+                                }
+                              }
+                              $stmt->close();
 
-                        ?>
-                      </tbody>
-                    </table>
+                              ?>
+                            </tbody>
+                          </table>
+                        </div>
+
+
+
+
+
+
+                      </div>
+                    </div>
                   </div>
 
 
@@ -494,13 +451,14 @@ if ($_SESSION["u_nivel"] == 2 || $_SESSION["u_nivel"] == 3) {
 
 
                 </div>
+
+
+
+
+
+
+
               </div>
-            </div>
-
-
-
-
-
 
             </div>
 
@@ -508,68 +466,54 @@ if ($_SESSION["u_nivel"] == 2 || $_SESSION["u_nivel"] == 3) {
 
 
 
-
-
           </div>
+          <!-- Content wrapper -->
 
         </div>
-
-
-
-
-
-
-
-
-
+        <!-- / Layout page -->
       </div>
-      <!-- Content wrapper -->
 
-    </div>
-    <!-- / Layout page -->
-  </div>
+      <div class="modal fade" id="informeAveria" aria-hidden="true" aria-labelledby="modalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class=" d-flex w-100 justify-content-between">
 
-  <div class="modal fade" id="informeAveria" aria-hidden="true" aria-labelledby="modalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class=" d-flex w-100 justify-content-between">
+                <h5 class="modal-title">Detalles de la averia</h5>
 
-            <h5 class="modal-title">Detalles de la averia</h5>
+                <div><button class="btn btn-primary btn-sm" onclick="print_pdf()"><i class="bx bx-download me-2"></i> DESCARGAR</button></div>
+              </div>
 
-            <div><button class="btn btn-primary btn-sm" onclick="print_pdf()"><i class="bx bx-download me-2"></i> DESCARGAR</button></div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="averiaDetalles">
+            </div>
           </div>
-
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="averiaDetalles">
         </div>
       </div>
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-  </div>
-  <!-- Overlay -->
-  <div class="layout-overlay layout-menu-toggle"></div>
-  </div>
-  <!-- / Layout wrapper -->
-  <?php require('../includes/alerts.html'); ?>
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
-  <script src="../../assets/vendor/libs/popper/popper.js"></script>
-  <script src="../../assets/vendor/js/bootstrap.js"></script>
-  <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-  <script src="../../assets/vendor/js/menu.js"></script>
-  <script src="../../assets/js/main.js"></script>
+    <!-- / Layout wrapper -->
+    <?php require('../includes/alerts.html'); ?>
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../assets/vendor/js/menu.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
 
-  <script src="../../assets/vendor/amcharts5/index.js"></script>
-  <script src="../../assets/vendor/amcharts5/xy.js"></script>
-  <script src="../../assets/vendor/amcharts5/themes/Animated.js"></script>
-  <script src="../../assets/vendor/amcharts5/themes/Material.js"></script>
+    <script src="../../assets/vendor/amcharts5/index.js"></script>
+    <script src="../../assets/vendor/amcharts5/xy.js"></script>
+    <script src="../../assets/vendor/amcharts5/themes/Animated.js"></script>
+    <script src="../../assets/vendor/amcharts5/themes/Material.js"></script>
 
 
 
-  <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
-  <script src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
 </body>
 
 

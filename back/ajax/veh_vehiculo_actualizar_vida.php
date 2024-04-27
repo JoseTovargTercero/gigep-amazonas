@@ -18,7 +18,7 @@ if ($stmt2) {
 $stmt2 -> close();
 
 $date = date('Y-m-d H:s:i');
-$stmt2 = $conexion->prepare("UPDATE `veh_vehiculos` SET `ultimaActualizacionCauchos`='$date'  WHERE id=?");
+$stmt2 = $conexion->prepare("UPDATE `veh_vehiculos` SET `ultimaActualizacionCauchos`='$date', `cauchos`=1  WHERE id=?");
 $stmt2->bind_param("s", $vehiculo);
 $stmt2->execute();
 $stmt2 -> close();

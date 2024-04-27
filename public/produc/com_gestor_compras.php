@@ -844,10 +844,17 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
       success: function(msg) {
         $(".container-loader").hide();
 
+        alert(msg)
+
         if (msg.trim() == 'ok') {
 
+          $("#categoria_add_product" + " option[value='']").attr("selected", true);
+          $("#insumo_add_product" + " option[value='']").attr("selected", true);
+          $('#cantidad_add_product').val('')
+          $('#group_hide').val('')
+
           grupoInsumos()
-          $('.form-control').html('')
+
           toast_s('success', 'Se agrego correctamente')
           $('#modalCenter').modal('toggle')
 
@@ -867,18 +874,6 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
   } //// FALTA
   //// FALTA
   //// FALTA
-  //// FALTA
-  //// FALTA
-  //// FALTA
-  //// FALTA
-
-
-
-
-
-
-
-
 
 
 
