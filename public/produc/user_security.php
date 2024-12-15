@@ -27,7 +27,7 @@ $user = $_SESSION["u_id"];
   <title class="x" id="title">Seguridad</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -157,8 +157,8 @@ $user = $_SESSION["u_id"];
                         <button type="submit" class="btn btn-primary me-2" onclick="updatePass()">Guardar cambios</button>
                       </div>
                     </div>
-                  
-</div>
+
+                  </div>
                 </div>
               </div>
 
@@ -321,9 +321,9 @@ $user = $_SESSION["u_id"];
       url: '../../back/ajax/user_updatePass.php',
       dataType: 'html',
       data: {
-        currentPassword:currentPassword,
-        newPassword:newPassword,
-        confirmPassword:confirmPassword
+        currentPassword: currentPassword,
+        newPassword: newPassword,
+        confirmPassword: confirmPassword
       },
       cache: false,
       success: function(msg) {
@@ -331,9 +331,9 @@ $user = $_SESSION["u_id"];
 
         if (msg.trim() == 'error_pass') {
           toast_s('error', 'La contraseña actual no es correcta.')
-        }else if (msg.trim() == 'error_diff') {
+        } else if (msg.trim() == 'error_diff') {
           toast_s('error', 'Las contraseñas no coinciden.')
-        }else if (msg.trim() == 'ok') {
+        } else if (msg.trim() == 'ok') {
           toast_s('success', 'Se actualizó correctamente.')
           $('#currentPassword').val('')
           $('#newPassword').val('')

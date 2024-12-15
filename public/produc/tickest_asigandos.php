@@ -18,7 +18,7 @@ if ($_SESSION["u_nivel"] != 4) {
     <title class="ta" id="title">Tickets</title>
     <meta name="description" content="" />
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -62,7 +62,7 @@ if ($_SESSION["u_nivel"] != 4) {
 
 
                 <div class="card-body table-responsive">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates itaque reiciendis quisquam perspiciatis vel laborum veniam commodi consequatur. Tenetur nisi dolorum pariatur doloremque deserunt enim repudiandae veniam cupiditate nam rerum.
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates itaque reiciendis quisquam perspiciatis vel laborum veniam commodi consequatur. Tenetur nisi dolorum pariatur doloremque deserunt enim repudiandae veniam cupiditate nam rerum.
                 </div>
               </div>
             </div>
@@ -106,7 +106,6 @@ if ($_SESSION["u_nivel"] != 4) {
   </body>
 
   <script>
- 
     function tabla() {
       $.get("../../back/ajax/admi_user_list_tabla.php", '', function(data) {
         $('#tabla').html(data)
@@ -121,15 +120,15 @@ if ($_SESSION["u_nivel"] != 4) {
 
     function addNewUser() {
 
-    let name_user = $('#name_user').val()
-    let email_user = $('#email_user').val()
-    let rol_user = $('#rol_user').val()
-    let en_text = '';
-    let en_select = '';
-    if (sn == '1') {
-      en_text = $('#en_text').val()
-      en_select = $('#en_select').val()
-    }
+      let name_user = $('#name_user').val()
+      let email_user = $('#email_user').val()
+      let rol_user = $('#rol_user').val()
+      let en_text = '';
+      let en_select = '';
+      if (sn == '1') {
+        en_text = $('#en_text').val()
+        en_select = $('#en_select').val()
+      }
 
       $.ajax({
         type: 'POST',
@@ -146,15 +145,15 @@ if ($_SESSION["u_nivel"] != 4) {
         success: function(msg) {
           if (msg.trim() == 'exists_u') {
             toast_s('warning', 'El usuario ya existe.')
-          }else if (msg.trim() == 'exists_t_u') {
+          } else if (msg.trim() == 'exists_t_u') {
             toast_s('warning', 'Ya se ha creado una solicitud para este usuario.')
-          }else if (msg.trim() == 'ok') {
+          } else if (msg.trim() == 'ok') {
             toast_s('success', 'Agregado correctamente.')
             tabla()
-          }else if (msg.trim() == 'accion_denegada') {
+          } else if (msg.trim() == 'accion_denegada') {
             toast_s('warning', 'Acción denegada.')
             tabla()
-          }else{
+          } else {
             console.log(msg)
           }
 
@@ -215,28 +214,27 @@ if ($_SESSION["u_nivel"] != 4) {
     <?php if ($_SESSION["u_nivel"] == '1' || $_SESSION["u_nivel"] == '4') { ?>
 
       $(document).ready(function() {
-            function viewUserType() {
-              if (sn == '1') {
-                if($("#rol_user").val() == 'Empresa'){
-                  $("#registroEmpresas").show(300);
-                }else{
-                  $("#registroEmpresas").hide(300);
-                }
-              }
-              
-              if (sn == '1' || sn == '2') {
-                if ($("#rol_user").val() == 'Empleado') {
-                  $("#registroEmpresasSe").show(300);
-                }else{
-                  $("#registroEmpresasSe").hide(300);
-                }
-              }
+        function viewUserType() {
+          if (sn == '1') {
+            if ($("#rol_user").val() == 'Empresa') {
+              $("#registroEmpresas").show(300);
+            } else {
+              $("#registroEmpresas").hide(300);
             }
-            $("#rol_user").change(viewUserType);
-        });
+          }
+
+          if (sn == '1' || sn == '2') {
+            if ($("#rol_user").val() == 'Empleado') {
+              $("#registroEmpresasSe").show(300);
+            } else {
+              $("#registroEmpresasSe").hide(300);
+            }
+          }
+        }
+        $("#rol_user").change(viewUserType);
+      });
 
     <?php }  ?>
-
   </script>
 
   </html>

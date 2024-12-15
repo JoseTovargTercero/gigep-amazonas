@@ -9,7 +9,6 @@ if ($_SESSION["u_nivel"]) {
   $cantidad_add_product = $_POST["cantidad_add_product"];
   $group_hide = $_POST["group_hide"];
 
-
 //// FALTA
 //// FALTA
 
@@ -19,6 +18,8 @@ if ($_SESSION["u_nivel"]) {
   $stmt->execute();
   $result = $stmt->get_result();
   if (!$result->num_rows > 0) {
+
+
     $stmt_o = $conexion->prepare("INSERT INTO com_grupo_insumos (grupo, insumo, cantidad) VALUES (?,?,?)");
     $stmt_o->bind_param("sss", $group_hide, $insumo_add_product, $cantidad_add_product);
     $stmt_o->execute();

@@ -159,7 +159,7 @@ $stmt->close();
   <title class="go" id="title">Rendimiento Operacional</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -174,27 +174,28 @@ $stmt->close();
 
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <link rel="stylesheet" href="../../assets/vendor/leaflet.edgebuffer.js" />
+  <link rel="stylesheet" href="../../assets/vendor/leaflet.edgebuffer.js" />
 
 
 </head>
 
 <body>
 
-<style>
-  .mapToFront{
-    height: 100vh !important;
-    background-color: #000000de;
-    position: fixed;
-    z-index: 1900;
-    width: 100%;
-    display: flex;
-    top: 0;
-    left: 0;
-  }
-  .close-btn {
+  <style>
+    .mapToFront {
+      height: 100vh !important;
+      background-color: #000000de;
+      position: fixed;
+      z-index: 1900;
+      width: 100%;
+      display: flex;
+      top: 0;
+      left: 0;
+    }
+
+    .close-btn {
       position: absolute;
       top: 16px;
       left: 36px;
@@ -208,34 +209,35 @@ $stmt->close();
       cursor: pointer;
     }
 
-    .mapFront{
-    background-color: #00000052;
-    width: 90%;
-    height: 90%;
-    margin: auto;
+    .mapFront {
+      background-color: #00000052;
+      width: 90%;
+      height: 90%;
+      margin: auto;
     }
-    .mapFull{
+
+    .mapFull {
       margin: 55px 35px 45px !important;
       height: 80% !important;
     }
 
-.hide{
-  display: none !important;
-}
-</style>
+    .hide {
+      display: none !important;
+    }
+  </style>
 
 
 
-<div class="container-loader" style="background-color: lightgray;">
-      <div class="spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <div class="container-loader" style="background-color: lightgray;">
+    <div class="spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+  </div>
 
 
 
@@ -534,88 +536,89 @@ $stmt->close();
 
                 <div class="col-lg-5">
 
-                      <style>
-                        .infoTarea{
-                          position: absolute;
-                          z-index: 999;
-                          display: flex;
-                          width: -webkit-fill-available;
-                          bottom: 0;
-                          margin-bottom: 20px;
-                        }
-                        .content_info{
-                          margin: auto;
-                          width: 80%;
-                          background-color: #0000008f;
-                          padding: 10px;
-                          border-radius: 5px;
-                          color: white;
-                          box-shadow: 0 2px 6px 0 rgb(0 0 0 / 36%)
-                        }
-                      </style>
+                  <style>
+                    .infoTarea {
+                      position: absolute;
+                      z-index: 999;
+                      display: flex;
+                      width: -webkit-fill-available;
+                      bottom: 0;
+                      margin-bottom: 20px;
+                    }
 
-                <div class="card mb-3" id="asdasd">
+                    .content_info {
+                      margin: auto;
+                      width: 80%;
+                      background-color: #0000008f;
+                      padding: 10px;
+                      border-radius: 5px;
+                      color: white;
+                      box-shadow: 0 2px 6px 0 rgb(0 0 0 / 36%)
+                    }
+                  </style>
 
-                <div class="card-header d-flex align-items-center justify-content-between">
-                            <div class="card-title mb-0">
-                              <h5 class="m-0 me-2">Tareas ejecutadas</h5>
-                            </div>
+                  <div class="card mb-3" id="asdasd">
 
-
-
-                            <div class="btn-group dropstart">
-
-
-                              <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                              </button>
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Tareas ejecutadas</h5>
+                      </div>
 
 
 
-
-                              <div class="dropdown-menu p-2">
-                              <a class="dropdown-item" onclick="mapToFront()"><i class='bx bx-fullscreen me-2'></i> Pantalla completa</a>
-                              </div>
-                            </div>
-
-                          </div>
+                      <div class="btn-group dropstart">
 
 
+                        <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
 
-                      <div class="card-body "  style="height: 40vh">
+
+
+
+                        <div class="dropdown-menu p-2">
+                          <a class="dropdown-item" onclick="mapToFront()"><i class='bx bx-fullscreen me-2'></i> Pantalla completa</a>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
+                    <div class="card-body " style="height: 40vh">
 
 
 
                       <div style="height: 100%;" id="contenMap" class="mapToFront">
-                        
-                      <div class="close-btn" style="display: none;" id="btnclose"  onclick="removeFronMap()">
+
+                        <div class="close-btn" style="display: none;" id="btnclose" onclick="removeFronMap()">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                           </svg>
                         </div>
 
-                        <div class="infoTarea animated fadeIn hide"  id="infoMap">
+                        <div class="infoTarea animated fadeIn hide" id="infoMap">
                           <div class="content_info">
-                                  <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <span class="badge bg-label-success">Ejecutado</span>
-                                    <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
-                                      5 <span class="text-warning"><i class="bx bxs-user me-1"></i></span><span class="text-white" id="map_personas"></span>
-                                    </h6>
-                                  </div>
-                                  <h5 id="map_nameTarea" class="text-white"></h5>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                              <span class="badge bg-label-success">Ejecutado</span>
+                              <h6 class="d-flex align-items-center justify-content-center gap-1 mb-0">
+                                5 <span class="text-warning"><i class="bx bxs-user me-1"></i></span><span class="text-white" id="map_personas"></span>
+                              </h6>
+                            </div>
+                            <h5 id="map_nameTarea" class="text-white"></h5>
 
-                                  <p class="mt-2" id="map_desc"></p>
-                                  <p class="d-flex align-items-center"><i class="bx bx-time-five me-2"></i> <span id="map_time"></span></p>
+                            <p class="mt-2" id="map_desc"></p>
+                            <p class="d-flex align-items-center"><i class="bx bx-time-five me-2"></i> <span id="map_time"></span></p>
                           </div>
                         </div>
 
-                        
+
                         <div id="map" class="rounded" style="height: 80%; width: 100%;"></div>
-                        
+
                       </div>
-                      
-                      </div>
+
                     </div>
+                  </div>
 
                   <?php if ($_SESSION["u_nivel"] == 1) { ?>
                     <div class="card mb-3">
@@ -749,9 +752,9 @@ $stmt->close();
 
 
                   <script>
-                            var mapInfo = [];
-                          </script>
-                          
+                    var mapInfo = [];
+                  </script>
+
                   <div class="card">
                     <div class="card-header">
                       <h5 class="card-title">Solicitudes de participación</h5>
@@ -821,24 +824,24 @@ $stmt->close();
                                 $resultr = $stmt_r->get_result();
                                 if ($resultr->num_rows > 0) {
                                   while ($r = $resultr->fetch_assoc()) {
-                            
+
                                     $total_personas += $r['atencion_personas_1'] + $r['atencion_personas_2'] + $r['atencion_personas_3'] + $r['atencion_personas_4'] + $r['atencion_personas'];
 
 
 
 
                                     if ($r['status'] == '1') {
-                                   
-                                 
+
+
                                       $tarea = $r['tarea'];
                                       $descripcion = $r['descripcion'];
                                       $cords = $r['cords'];
                                       $fecha_ejecucion = $r['fecha_ejecucion'];
-  
+
                                       echo '<script>
-                                      mapInfo.push(["'.$tarea.'", `'.recortar_palabras($descripcion).'`, \''.$cords.'\', \''.$total_personas.'\', \''.fechaCastellano($fecha_ejecucion).'\'])
+                                      mapInfo.push(["' . $tarea . '", `' . recortar_palabras($descripcion) . '`, \'' . $cords . '\', \'' . $total_personas . '\', \'' . fechaCastellano($fecha_ejecucion) . '\'])
                                       </script>';
-  
+
 
 
                                       $tarea_ejecutadas++;
@@ -1001,115 +1004,112 @@ $stmt->close();
   <script src="../../assets/vendor/amcharts5/themes/Dataviz.js"></script>
 
 
-  
+
 
 </body>
 
 <script>
-
-
-
-/*MAPA */
-var map = new L.Map("map", {
-  fullscreenControl: true,
-}).setView([5.65, -67.6], 13);
-map.attributionControl.setPrefix("");
+  /*MAPA */
+  var map = new L.Map("map", {
+    fullscreenControl: true,
+  }).setView([5.65, -67.6], 13);
+  map.attributionControl.setPrefix("");
 
 
 
 
 
-var baseLayers = {
-  Satelite: L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-    edgeBufferTiles: 5,
-    minZoom: 2,
-    maxZoom: 28,
-    attribution: '',
-    subdomains: ["mt0", "mt1", "mt2", "mt3"]
-}),
-  Calles: L.tileLayer("http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
-    minZoom: 2,
-    maxZoom: 28,
-    attribution: "",
-    subdomains: ["mt0", "mt1", "mt2", "mt3"],
-  }),
-};
-map.addLayer(baseLayers.Calles);
+  var baseLayers = {
+    Satelite: L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+      edgeBufferTiles: 5,
+      minZoom: 2,
+      maxZoom: 28,
+      attribution: '',
+      subdomains: ["mt0", "mt1", "mt2", "mt3"]
+    }),
+    Calles: L.tileLayer("http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
+      minZoom: 2,
+      maxZoom: 28,
+      attribution: "",
+      subdomains: ["mt0", "mt1", "mt2", "mt3"],
+    }),
+  };
+  map.addLayer(baseLayers.Calles);
 
 
 
 
 
 
-var overlayers = {};
+  var overlayers = {};
 
-var controlRight1 = L.control
-  .layers(baseLayers, overlayers, {
-    position: "topright", // 'topleft', 'bottomleft', 'bottomright'
-    collapsed: true, // true
-  })
-  .addTo(map); // Primer Control Derecha
+  var controlRight1 = L.control
+    .layers(baseLayers, overlayers, {
+      position: "topright", // 'topleft', 'bottomleft', 'bottomright'
+      collapsed: true, // true
+    })
+    .addTo(map); // Primer Control Derecha
 
   let i = 0;
-  const timer = setInterval(function() {    
+  const timer = setInterval(function() {
     if (mapInfo.length > 0) {
-      
-    let geoJsonResult = JSON.parse(mapInfo[i][2]);
 
-    
-    var coords = []; //define an array to store coordinates
+      let geoJsonResult = JSON.parse(mapInfo[i][2]);
 
 
-    var layerGroup = L.geoJSON(geoJsonResult, {
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup('<strong>Tarea:</strong> ' + mapInfo[i][0] + '<br><strong>Descripción:</strong> ' + mapInfo[i][1]);
-        coords.push(feature.geometry.coordinates);
-      }
-    }).addTo(map);
+      var coords = []; //define an array to store coordinates
 
 
-    layerGroup.eachLayer(function(layer){
+      var layerGroup = L.geoJSON(geoJsonResult, {
+        onEachFeature: function(feature, layer) {
+          layer.bindPopup('<strong>Tarea:</strong> ' + mapInfo[i][0] + '<br><strong>Descripción:</strong> ' + mapInfo[i][1]);
+          coords.push(feature.geometry.coordinates);
+        }
+      }).addTo(map);
+
+
+      layerGroup.eachLayer(function(layer) {
         layer.openPopup();
-    });
+      });
 
 
-    coords.forEach(element => {
-      map.flyTo([element[1], element[0]], 14, {
-            animate: true,
-            duration: 1.5
-       });
-    });
+      coords.forEach(element => {
+        map.flyTo([element[1], element[0]], 14, {
+          animate: true,
+          duration: 1.5
+        });
+      });
 
 
-    
-//        mapInfo.push(["'.$tarea.'", "'.$descripcion.'", \''.$cords.'\', \''.$total_personas.'\', \''.fechaCastellano($fecha_ejecucion).'\'])
+
+      //        mapInfo.push(["'.$tarea.'", "'.$descripcion.'", \''.$cords.'\', \''.$total_personas.'\', \''.fechaCastellano($fecha_ejecucion).'\'])
 
 
-    $('#infoMap').removeClass('hide')
-    
-    $('#map_nameTarea').html(mapInfo[i][0])
-    $('#map_desc').html(mapInfo[i][1])
-    $('#map_personas').html(mapInfo[i][3])
-    $('#map_time').html(mapInfo[i][4])
+      $('#infoMap').removeClass('hide')
 
-    
-    i = i + 1
-  if (i === mapInfo.length) {
-    clearInterval(timer);
-  }
+      $('#map_nameTarea').html(mapInfo[i][0])
+      $('#map_desc').html(mapInfo[i][1])
+      $('#map_personas').html(mapInfo[i][3])
+      $('#map_time').html(mapInfo[i][4])
 
-}else{
-  clearInterval(timer);
-}
 
-}, 4000);
+      i = i + 1
+      if (i === mapInfo.length) {
+        clearInterval(timer);
+      }
+
+    } else {
+      clearInterval(timer);
+    }
+
+  }, 4000);
 
 
   function mapToFront() {
     $("#contenMap").addClass('mapToFront')
     $("#btnclose").show()
     $("#map").addClass('mapFull')
-  map.invalidateSize()
+    map.invalidateSize()
 
   }
 
@@ -1117,8 +1117,8 @@ var controlRight1 = L.control
     $("#contenMap").removeClass('mapToFront')
     $("#btnclose").hide()
     $("#map").removeClass('mapFull')
-  map.invalidateSize()
-    
+    map.invalidateSize()
+
 
   }
   $(window).on("load", removeFronMap);
@@ -1126,10 +1126,10 @@ var controlRight1 = L.control
 
 
 
-/*===================================================
-                        DRAW ITEM            
-    ================================================
-    /*MAPA */
+  /*===================================================
+                          DRAW ITEM            
+      ================================================
+      /*MAPA */
 
 
 
@@ -1213,7 +1213,7 @@ var controlRight1 = L.control
       }
     }).fail(function(jqXHR, textStatus, errorThrown) {
       // reintentar
-$('.container-loader').hide()
+      $('.container-loader').hide()
       toast('r', 'Ocurrió un error, inténtelo nuevamente ' + errorThrown)
     });
   }

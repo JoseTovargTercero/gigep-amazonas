@@ -16,7 +16,7 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
     <title class="us" id="title">Listado de usuarios</title>
     <meta name="description" content="" />
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -83,10 +83,10 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
                         <ul class="timeline">
 
 
-                        <?php 
-                           $empresa = $_SESSION["u_ente_id"];
+                          <?php
+                          $empresa = $_SESSION["u_ente_id"];
 
-                           if ($_SESSION["u_nivel"] == '2') {
+                          if ($_SESSION["u_nivel"] == '2') {
                             $stmt = mysqli_prepare($conexion, "SELECT * FROM `system_logs`
                             LEFT JOIN system_users ON system_users.u_id = system_logs.user_id                        
                             WHERE empresa_id = '$empresa' ORDER BY id DESC LIMIT 50");
@@ -97,22 +97,22 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
                           }
                           $stmt->execute();
                           $result = $stmt->get_result();
-                            if ($result->num_rows > 0) {
-                              while ($row = $result->fetch_assoc()) {
+                          if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
 
-                                echo '<li class="timeline-item timeline-item-transparent">
+                              echo '<li class="timeline-item timeline-item-transparent">
                                 <span class="timeline-point-wrapper"><span class="timeline-point timeline-point-primary"></span></span>
                                 <div class="timeline-event">
                                   <div class="timeline-header border-bottom mb-3">
-                                    <h6 class="mb-0">'.$row['u_nombre'].'</h6>
-                                    <span class="text-muted">'.fechaCastellano($row['fecha']).'</span>
+                                    <h6 class="mb-0">' . $row['u_nombre'] . '</h6>
+                                    <span class="text-muted">' . fechaCastellano($row['fecha']) . '</span>
                                   </div>
                                   <div class="d-flex justify-content-between flex-wrap mb-2">
                                     <div>
-                                      <span>'.$row['dispositivo'].'</span>
+                                      <span>' . $row['dispositivo'] . '</span>
                                     </div>
                                     <div>
-                                      <span class="text-muted">'.explode(' ', $row['fecha'])[1].'</span>
+                                      <span class="text-muted">' . explode(' ', $row['fecha'])[1] . '</span>
                                     </div>
                                   </div>
                                  
@@ -121,14 +121,14 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
                             }
                           }
                           $stmt->close();
-                        ?>
+                          ?>
 
 
 
 
 
-                          
-                      
+
+
                         </ul>
 
 

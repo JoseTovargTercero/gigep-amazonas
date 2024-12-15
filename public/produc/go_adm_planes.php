@@ -156,7 +156,7 @@ $stmt->close();
   <title class="go" id="title">Gestor de planes</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -173,16 +173,16 @@ $stmt->close();
 
 <body>
 
-<div class="container-loader" style="background-color: lightgray;">
-      <div class="spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <div class="container-loader" style="background-color: lightgray;">
+    <div class="spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+  </div>
 
 
 
@@ -316,7 +316,7 @@ $stmt->close();
 
 
                   <?php
-                  
+
                   if ($plan == 'No') {
                     echo ' <div class="card bg-label-danger" style="min-height: 225px;">
                 <div class="card-body d-flex justify-content-between ">
@@ -362,7 +362,7 @@ $stmt->close();
                   <h5 class="text-primary mb-0" id="sec_' . $sector . '">' . contar("SELECT count(*) FROM go_operaciones WHERE id_p='$plan' AND id_s='$id_s' AND ano='$ano'") . '
                   </h5>
 
-            </div>';
+                 </div>';
                             }
                           }
                           $stmt_s->close();
@@ -409,20 +409,20 @@ $stmt->close();
 
                             <button type="button" type="button" data-bs-toggle="popover" data-bs-offset="0,14" data-bs-placement="left" data-bs-html="true" data-bs-content="
                      <div>
-            <p class='mt-2'>
-                <label class='form-label'>Nombre del plan</label>
-                <input id='nombre_est' class='form-control'>
-              </p>
-            <div>
-            <button type='button' onclick='nuevo_estrategico()' class='w-100 btn btn-sm btn-primary'>Guardar</button>
-          </div>" title="" data-bs-original-title="Nuevo plan estratégico" aria-describedby="popover282641" class="btn btn-sm btn-primary">
+                            <p class='mt-2'>
+                                <label class='form-label'>Nombre del plan</label>
+                                <input id='nombre_est' class='form-control'>
+                              </p>
+                            <div>
+                            <button type='button' onclick='nuevo_estrategico()' class='w-100 btn btn-sm btn-primary'>Guardar</button>
+                          </div>" title="" data-bs-original-title="Nuevo plan estratégico" aria-describedby="popover282641" class="btn btn-sm btn-primary">
                               <span class="tf-icons bx bx-plus"></span>
                               Nuevo Plan Estratégico
                             </button>
 
                           </div>
                         </div>
-                        <table class="table datatables-academy-course dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" >
+                        <table class="table datatables-academy-course dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                           <thead class="border-top">
                             <tr>
                               <th style="width: 35%;">Operacion/Empresa</th>
@@ -506,7 +506,7 @@ $stmt->close();
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                           <div class="dropdown-menu">
                           <a class="dropdown-item pointer" onclick="renombrarPlan(\'' . $id . '\')"><i class="bx bx-edit-alt me-2"></i> Cambiar nombre</a>
-                          <a class="dropdown-item pointer" onclick="cerrarPlan(\''.$id.'\')" ><i class="bx bx-calendar-check me-2"></i> Cerrar Plan</a>
+                          <a class="dropdown-item pointer" onclick="cerrarPlan(\'' . $id . '\')" ><i class="bx bx-calendar-check me-2"></i> Cerrar Plan</a>
                         </div>
                     </div>';
                                 }
@@ -601,7 +601,7 @@ $stmt->close();
                   },
                   cache: false,
                   success: function(msg) {
-                  $('.container-loader').hide()
+                    $('.container-loader').hide()
 
                     location.reload();
                   }
@@ -619,7 +619,7 @@ $stmt->close();
 
 
             <div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered" >
+              <div class="modal-dialog modal-dialog-centered">
                 <form class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="backDropModalTitle">Renombrar</h5>
@@ -627,10 +627,10 @@ $stmt->close();
                   </div>
                   <div class="modal-body">
                     <input type="text" id="p" hidden />
-                      <div class=" mb-3">
-                        <label for="nuevoNombre" class="form-label">Nuevo nombre</label>
-                        <input type="text" id="nuevoNombre" class="form-control" placeholder="Ingrese el nuevo nombre" />
-                      </div>
+                    <div class=" mb-3">
+                      <label for="nuevoNombre" class="form-label">Nuevo nombre</label>
+                      <input type="text" id="nuevoNombre" class="form-control" placeholder="Ingrese el nuevo nombre" />
+                    </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
@@ -683,11 +683,10 @@ $stmt->close();
 </body>
 
 <script>
+  function cerrarPlan(id) {
 
-function cerrarPlan(id) {
 
-
-  Swal.fire({
+    Swal.fire({
       title: "¿Esta seguro?",
       icon: "warning",
       html: `Se <strong>cerrará</strong> el plan. La acción es irreversible.`,
@@ -698,16 +697,16 @@ function cerrarPlan(id) {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        
-          location.href="../../back/ajax/go_adm_planes_cerrarPlan.php?p="+id;
+
+        location.href = "../../back/ajax/go_adm_planes_cerrarPlan.php?p=" + id;
       }
     });
 
 
-}
+  }
 
 
-function nuevo_estrategico() {
+  function nuevo_estrategico() {
 
     let nombre_est = $('#nombre_est').val()
 
@@ -727,7 +726,7 @@ function nuevo_estrategico() {
       },
       cache: false,
       success: function(msg) {
-      $('.container-loader').hide()
+        $('.container-loader').hide()
 
         if (msg.trim() == 'ok') {
           location.reload();
@@ -754,7 +753,7 @@ function nuevo_estrategico() {
   function n_plan() {
     $('button').attr('disabled', true);
 
-      $('.container-loader').show()
+    $('.container-loader').show()
 
     $.ajax({
       url: '../../back/ajax/go_adm_planes_v_general_n_plan.php',

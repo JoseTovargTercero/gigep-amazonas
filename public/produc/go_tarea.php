@@ -71,8 +71,8 @@ if (!$_SESSION["u_nivel"]) {
       $responsable_ente_id = $row['responsable_ente_id'];
       $vehiculos = $row['vehiculos'];
       $condicion_vehiculos = $row['condicion_vehiculos'];
-    
-    
+
+
       $estado = $row['estado'];
       $t_estados = $row['t_estados'];
       $nombre_municipio = $row['nombre_municipio'];
@@ -88,9 +88,7 @@ if (!$_SESSION["u_nivel"]) {
 
       if ($tipo_ejecucion == '1') {
         $fechaFin = $fecha;
-
       }
-
     }
   } else {
 
@@ -221,7 +219,7 @@ if (!$_SESSION["u_nivel"]) {
     <title class="go" id="title">Tarea</title>
     <meta name="description" content="" />
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -298,35 +296,35 @@ if (!$_SESSION["u_nivel"]) {
                           <div class="col-8">
                             <div class="card-body">
                               <h6 class="card-title mb-1 text-nowrap"> <?php echo $nombre ?> - <?php echo ($status === 0 ? '<span class="fw-bold text-primary">Pendiente</span>' : '<span class="fw-bold text-success">Ejecutado</span>') ?><br><br>
-                            
-
-                              Tiempo de ejecución: <span class="text-primary">
 
 
-                              <?php 
-                              switch ($tipo_ejecucion) {
-                                case ('1'):
-                                  echo 'un día';
-                                  break;
-                                case ('2'):
-                                  echo 'Todo el año';
-                                  break;
-                                case ('3'):
-                                  echo 'Una semana';
-                                  break;
-                                case ('4'):
-                                  echo 'Un mes';
-                                  break;
-                                case ('5'):
-                                  echo 'Un trimestre';
-                                  break;
-                                case ('6'):
-                                  echo 'Un semestre';
-                                  break;
-                                }
-                              ?>
-</span>
-                            </h6>
+                                Tiempo de ejecución: <span class="text-primary">
+
+
+                                  <?php
+                                  switch ($tipo_ejecucion) {
+                                    case ('1'):
+                                      echo 'un día';
+                                      break;
+                                    case ('2'):
+                                      echo 'Todo el año';
+                                      break;
+                                    case ('3'):
+                                      echo 'Una semana';
+                                      break;
+                                    case ('4'):
+                                      echo 'Un mes';
+                                      break;
+                                    case ('5'):
+                                      echo 'Un trimestre';
+                                      break;
+                                    case ('6'):
+                                      echo 'Un semestre';
+                                      break;
+                                  }
+                                  ?>
+                                </span>
+                              </h6>
                               <small class="d-block mb-3 text-muted"> <?php echo $decripcion ?> </small>
                             </div>
                           </div>
@@ -360,7 +358,7 @@ if (!$_SESSION["u_nivel"]) {
                               <div class="timeline-header">
                                 <small class="text-danger text-uppercase fw-medium">Pendiente</small>
                                 </div>
-                                <p class="text-muted mb-0">'. fechaCastellano($fechaFin) . '</p>
+                                <p class="text-muted mb-0">' . fechaCastellano($fechaFin) . '</p>
                               ';
                             } elseif ($row['status'] == '1') {
                               echo '
@@ -371,7 +369,7 @@ if (!$_SESSION["u_nivel"]) {
                                            <div class="timeline-header">
                                              <small class="text-success text-uppercase fw-medium">Ejecutado</small>
                                            </div>
-                                           <p class="text-muted mb-0">' .fechaCastellano($fechaFin) . '</p>
+                                           <p class="text-muted mb-0">' . fechaCastellano($fechaFin) . '</p>
                                            ';
                             } else {
                               echo '
@@ -434,19 +432,19 @@ if (!$_SESSION["u_nivel"]) {
                               <i class="bx bx-map"></i>
                             </div>
                           </div>
-                         <?php 
-                            echo '<b>Estado: </b>'.$t_estados.' ';
-                            if ($estado != '02') {
-                              echo '<b>Ubicación: </b>'.$lugar;
+                          <?php
+                          echo '<b>Estado: </b>' . $t_estados . ' ';
+                          if ($estado != '02') {
+                            echo '<b>Ubicación: </b>' . $lugar;
+                          } else {
+                            echo '<b>Municipio: </b>' . $nombre_municipio . ' <b>Parroquia: </b> ' . $nombre_parroquia . ' ';
+                            if ($parroquia == '020302' || $parroquia == '020301' || $parroquia == '020303' || $parroquia == '020304') {
+                              echo '<b>Comuna: </b>' . $nombre_comuna . ' <b>Comunidad: </b>' . $nombre_c_comunal;
                             } else {
-                                echo '<b>Municipio: </b>'.$nombre_municipio.' <b>Parroquia: </b> '.$nombre_parroquia.' ';
-                              if ($parroquia == '020302' || $parroquia == '020301' || $parroquia == '020303' || $parroquia == '020304') {
-                                echo '<b>Comuna: </b>'.$nombre_comuna.' <b>Comunidad: </b>'.$nombre_c_comunal;
-                              } else {
-                                  echo '<b>Ubicación: </b>'.$lugar;
-                              }
+                              echo '<b>Ubicación: </b>' . $lugar;
                             }
-                         ?>
+                          }
+                          ?>
                         </div>
                       </div>
                     </div>

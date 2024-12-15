@@ -8,13 +8,14 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
 
 <!DOCTYPE html>
 <html lang="es" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
   <title class="com" id="title">Productos</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -26,6 +27,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
   <link rel="stylesheet" href="../../assets/vendor/calendar/theme3.css" />
   <script src="../../js/sweetalert2.all.min.js"></script>
 </head>
+
 <body>
   <div class="container-loader">
     <div class="spinner">
@@ -181,10 +183,10 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
       cancelButtonText: `Cancelar`,
     }).then((result) => {
       if (result.isConfirmed) {
-              $('.container-loader').show()
+        $('.container-loader').show()
         $.get("../../back/ajax/com_borrar_insumo.php", "i=" + id, function(data) {
           tabla()
-                $('.container-loader').hide()
+          $('.container-loader').hide()
           toast_s('success', 'Se eliminó correctamente')
         });
       }

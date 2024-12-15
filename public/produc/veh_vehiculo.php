@@ -93,7 +93,7 @@ $stmta->close();
   <title class="vehiculos" id="title">Vehículos</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -439,11 +439,11 @@ $stmta->close();
                   </div>
                   <div class="col-lg-12 mb-3" id="modal_neumaticos" style="display: none;">
                     <div class="card">
-                      
-                      <div class="card-header d-flex justify-content-between" >
+
+                      <div class="card-header d-flex justify-content-between">
                         <div>
-                        <h5 class="mb-0">Vida de los neumáticos</h5>
-                        <small class="text-muted">Porcentaje de vida</small>
+                          <h5 class="mb-0">Vida de los neumáticos</h5>
+                          <small class="text-muted">Porcentaje de vida</small>
                         </div>
 
                         <button class="btn btn-secondary" onclick="$('#modal_neumaticos').hide(300)"> <i class="bx bx-x"></i> Cerrar</button>
@@ -543,9 +543,9 @@ $stmta->close();
                         }
                         ?>
                         <script>
-                          function vidaN(id){
-                            let vida = $('#porcentaje_'+id).val();
-                            let etiqueta = $('#etiqueta_'+id).val();
+                          function vidaN(id) {
+                            let vida = $('#porcentaje_' + id).val();
+                            let etiqueta = $('#etiqueta_' + id).val();
 
                             $.ajax({
                               type: 'POST',

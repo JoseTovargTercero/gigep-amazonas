@@ -27,7 +27,7 @@ $user = $_SESSION["u_id"];
   <title class="x" id="title">Cuenta</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -178,46 +178,46 @@ $user = $_SESSION["u_id"];
                       <h6 class="alert-heading fw-medium mb-1">Todas sus acciones son monitorizadas con fines de seguridad.</h6>
                     </div>
                   </div>
-                
+
 
 
 
 
 
                   <table class="table" id="table">
-                          <thead class="border-top">
-                            <tr>
-                              <th>Detalles</th>
-                              <th>Acción</th>
-                              <th>Fecha</th>
-                            </tr>
-                          </thead>
-                          <tbody>
+                    <thead class="border-top">
+                      <tr>
+                        <th>Detalles</th>
+                        <th>Acción</th>
+                        <th>Fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody>
 
 
-                            <?php
+                      <?php
 
 
 
-                              $stmt = mysqli_prepare($conexion, "SELECT * FROM `system_actividad` WHERE user='$user' ORDER BY id DESC");
-                              $stmt->execute();
-                              $result = $stmt->get_result();
-                              if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                  $id = $row['id'];
-                                  echo '<tr>
-                                    <td>'.$row['detalles'].'</td>
-                                    <td>'.user_type_action($row['accion']).'</td>
-                                    <td>'.fechaCastellano($row['fecha']).explode(' ', $row['fecha'])[1].'</td>
+                      $stmt = mysqli_prepare($conexion, "SELECT * FROM `system_actividad` WHERE user='$user' ORDER BY id DESC");
+                      $stmt->execute();
+                      $result = $stmt->get_result();
+                      if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                          $id = $row['id'];
+                          echo '<tr>
+                                    <td>' . $row['detalles'] . '</td>
+                                    <td>' . user_type_action($row['accion']) . '</td>
+                                    <td>' . fechaCastellano($row['fecha']) . explode(' ', $row['fecha'])[1] . '</td>
                                   </tr>';
-                                }
-                              }
-                              $stmt->close();
-                            ?>
-                          </tbody>
-                        </table>
+                        }
+                      }
+                      $stmt->close();
+                      ?>
+                    </tbody>
+                  </table>
 
-                  
+
 
 
 
@@ -329,7 +329,7 @@ $user = $_SESSION["u_id"];
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        
+
         location.href = "../../back/ajax/user_foto_delete.php";
         $('.container-loader').hide()
       }
@@ -363,7 +363,6 @@ $user = $_SESSION["u_id"];
       }
     }
   });
-
 </script>
 
 </html>

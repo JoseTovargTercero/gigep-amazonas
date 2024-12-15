@@ -8,13 +8,14 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
 ?>
 <!DOCTYPE html>
 <html lang="es" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
   <title class="com" id="title">Compras</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -27,6 +28,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
   <link rel="stylesheet" href="../../assets/vendor/calendar/theme3.css" />
   <script src="../../js/sweetalert2.all.min.js"></script>
 </head>
+
 <body>
   <div class="container-loader">
     <div class="spinner">
@@ -417,7 +419,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body" id="contenidoPrint">
-            
+
                 <table class="table">
                   <thead>
                     <tr>
@@ -529,7 +531,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
     }
 
 
-          $('.container-loader').show()
+    $('.container-loader').show()
     $.ajax({
       type: 'POST',
       url: '../../back/ajax/com_nuevo_grupo.php',
@@ -541,7 +543,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
       },
       cache: false,
       success: function(msg) {
-              $('.container-loader').hide()
+        $('.container-loader').hide()
         if (msg.trim() == 'ok') {
 
           grupoInsumos()
@@ -621,11 +623,11 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
   var cm;
 
   function loadGrupoCompraPeriodica(id_lista) {
-          $('.container-loader').show()
+    $('.container-loader').show()
     $.get("../../back/ajax/com_gestor_compraPeriodica.php", "v=1&i=" + id_lista, function(data) {
       $('#lista_Compra').html(data)
       tablaProximasCompras()
-            $('.container-loader').hide()
+      $('.container-loader').hide()
     });
   } // CARGAR LISTA DE INSUMOS DE LA COMPRA PERIODICA
 
@@ -651,9 +653,9 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
       }
     });
     if (ipAddress) {
-            $('.container-loader').show()
+      $('.container-loader').show()
       $.get("../../back/ajax/com_gestor_compraPeriodica.php", "v=5&i=" + id_insumo + '&c=' + ipAddress, function(data) {
-              $('.container-loader').hide()
+        $('.container-loader').hide()
         if (data.trim() == 'ok') {
           toast_s('success', 'Modificado correctamente')
           loadGrupoCompraPeriodica(cm)
@@ -687,9 +689,9 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
       cancelButtonText: `Cancelar`,
     }).then((result) => {
       if (result.isConfirmed) {
-              $('.container-loader').show()
+        $('.container-loader').show()
         $.get("../../back/ajax/com_gestor_compraPeriodica.php", "v=4&i=" + id, function(data) {
-                $('.container-loader').hide()
+          $('.container-loader').hide()
           if (data.trim() == 'ok') {
             toast_s('success', 'Eliminado correctamente')
             loadGrupoCompraPeriodica(cm)
@@ -729,9 +731,9 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
 
 
   function addInsumoCompraPeriodica(id_insumo) {
-          $('.container-loader').show()
+    $('.container-loader').show()
     $.get("../../back/ajax/com_gestor_compraPeriodica.php", "v=2&i=" + id_insumo + '&c=' + cm, function(data) {
-            $('.container-loader').hide()
+      $('.container-loader').hide()
       if (data.trim() == '0') {
         toast_s('success', 'Se agregó correctamente')
       } else if (data.trim() == '1') {
@@ -770,13 +772,13 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
 
 
   function grupoInsumos() {
-          $('.container-loader').show()
+    $('.container-loader').show()
     $.get("../../back/ajax/com_grupos_insumos.php?v=1", "", function(data) {
       $('#accordionExample').html(data)
     });
 
     $.get("../../back/ajax/com_grupos_insumos.php?v=2", "", function(data) {
-            $('.container-loader').hide()
+      $('.container-loader').hide()
       $('#accordionExample2').html(data)
     });
   }
@@ -803,9 +805,9 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
       cancelButtonText: `Cancelar`,
     }).then((result) => {
       if (result.isConfirmed) {
-              $('.container-loader').show()
+        $('.container-loader').show()
         $.get("../../back/ajax/com_borrar_insumo_group.php", "i=" + id, function(data) {
-                $('.container-loader').hide()
+          $('.container-loader').hide()
           if (data.trim() == 'ok') {
             grupoInsumos()
             toast_s('success', 'Se eliminó correctamente')
@@ -843,8 +845,6 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
       cache: false,
       success: function(msg) {
         $(".container-loader").hide();
-
-        alert(msg)
 
         if (msg.trim() == 'ok') {
 

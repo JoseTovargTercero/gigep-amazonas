@@ -26,7 +26,7 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
     <title class="us" id="title">Permisos de usuarios</title>
     <meta name="description" content="" />
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -121,86 +121,86 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
               </div>
               <div class="row">
 
-              <div class="col-sm-8 fv-plugins-icon-container">
-                <label class="form-label" for="modulos">Módulos</label>
-                <select id="modulos" class="form-control">
-                  <option style="color: lightgray;" value="">Seleccione</option>
-                  
+                <div class="col-sm-8 fv-plugins-icon-container">
+                  <label class="form-label" for="modulos">Módulos</label>
+                  <select id="modulos" class="form-control">
+                    <option style="color: lightgray;" value="">Seleccione</option>
 
-                  <?php 
+
+                    <?php
 
                     $stmt = mysqli_prepare($conexion, "SELECT * FROM `system_modulos`");
                     $stmt->execute();
                     $result = $stmt->get_result();
                     if ($result->num_rows > 0) {
                       while ($row = $result->fetch_assoc()) {
-                        echo '<option value="'.$row['modulo'].'">'.$row['nombre'].'</option>';
+                        echo '<option value="' . $row['modulo'] . '">' . $row['nombre'] . '</option>';
                       }
                     }
                     $stmt->close();
 
 
-                  ?>
+                    ?>
 
 
 
-                  <?php
-                  if ($_SESSION["sa"] == '1') {
-                    //echo '<option value="admi">Usuarios</option>';
-                  }
-                  ?>
-                </select>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <label class="form-label invisible d-none d-sm-inline-block">Botón</label>
-                <button type="submit" class="btn btn-primary mt-1 mt-sm-0 text-nowrap" onclick="addPermisos()">Dar permisos</button>
-              </div>
-              </div>
-
-
-            </div>
-          
-             
-              </div>
-              </div>
-              </div>
-              <!-- Modal empresas involucradas -->
-              <!-- Overlay -->
-          
-            </div>
-            </div>
-            </div>
-
-            <div class="modal fade" id="modal-quitarPermisos">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5>Quitar permisos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body pt-2">
-                    <p>Permisos actuales del usuario <b id="user_n_eliminar"></b></p>
-                    <div class="mb-3" id="list_permisos">
-                    </div>
-                  </div>
+                    <?php
+                    if ($_SESSION["sa"] == '1') {
+                      //echo '<option value="admi">Usuarios</option>';
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="col-sm-4 mb-3">
+                  <label class="form-label invisible d-none d-sm-inline-block">Botón</label>
+                  <button type="submit" class="btn btn-primary mt-1 mt-sm-0 text-nowrap" onclick="addPermisos()">Dar permisos</button>
                 </div>
               </div>
-              <!-- Modal empresas involucradas -->
-              <!-- Overlay -->
-              <div class="layout-overlay layout-menu-toggle"></div>
+
+
             </div>
 
 
-            <!-- Modal  -->
-            <!-- / Layout wrapper -->
-            <?php require('../includes/alerts.html'); ?>
-            <!-- build:js assets/vendor/js/core.js -->
-            <script src="../../assets/vendor/libs/popper/popper.js"></script>
-            <script src="../../assets/vendor/js/bootstrap.js"></script>
-            <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-            <script src="../../assets/vendor/js/menu.js"></script>
-            <script src="../../assets/js/main.js"></script>
-            <script src="../../assets/js/ui-popover.js"></script>
+          </div>
+        </div>
+      </div>
+      <!-- Modal empresas involucradas -->
+      <!-- Overlay -->
+
+    </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="modal-quitarPermisos">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Quitar permisos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <p>Permisos actuales del usuario <b id="user_n_eliminar"></b></p>
+            <div class="mb-3" id="list_permisos">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal empresas involucradas -->
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+
+
+    <!-- Modal  -->
+    <!-- / Layout wrapper -->
+    <?php require('../includes/alerts.html'); ?>
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../assets/vendor/js/menu.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/ui-popover.js"></script>
 
 
   </body>
@@ -237,18 +237,17 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
         $modulo = $row['modulo'];
         $nombre = $row['nombre'];
 
-        echo "modulos_disponibles['$modulo'] = '$nombre';".PHP_EOL;
-      
+        echo "modulos_disponibles['$modulo'] = '$nombre';" . PHP_EOL;
       }
     }
     $stmt->close();
 
 
-    
-    
-    
+
+
+
     if ($_SESSION["sa"] == '1') { ?>
-     // modulos_disponibles['admi'] = 'Usuarios'
+      // modulos_disponibles['admi'] = 'Usuarios'
     <?php } ?>
 
     function addPermisos() {
@@ -278,7 +277,7 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
             success: function(msg) {
               if (msg.trim() == 'np') {
                 toast_s('error', 'Usted no tiene permisos para asignar este permiso')
-                location.href="../../login/logout.php";
+                location.href = "../../login/logout.php";
               } else if (msg.trim() == 'ye') {
                 toast_s('error', 'El usuario ya cuenta con el permiso seleccionado')
               } else if (msg.trim() == 'ok') {
@@ -306,14 +305,14 @@ if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
         $('#modal-quitarPermisos').modal('show')
       });
     }
-    
+
 
     function eliminarPermiso(id) {
       $.get("../../back/ajax/admi_user_permisos.php", 'a=qp&i=' + id, function(data) {
         if (data.trim() == 'np') {
           toast_s('error', 'Usted no tiene permisos para modificar este permiso')
-          location.href="../../login/logout.php";
-        }else if(data.trim() == 'ok'){
+          location.href = "../../login/logout.php";
+        } else if (data.trim() == 'ok') {
           tabla()
           toast_s('success', 'Actualizado correcta')
           $('#modal-quitarPermisos').modal('hide')

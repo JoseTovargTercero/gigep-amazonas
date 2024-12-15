@@ -2,7 +2,7 @@
 include('../../back/config/conexion.php');
 include('../../back/config/funcione_globales.php');
 if ($_SESSION["u_nivel"] != 1 && $_SESSION["u_nivel"] != 2) {
-header("Location: ../index.php");
+  header("Location: ../index.php");
 } else {
   if ($_SESSION["u_nivel"] == '2') {
     $empresa_id = $_SESSION["u_ente_id"];
@@ -20,7 +20,7 @@ header("Location: ../index.php");
     <title class="us" id="title">Listado de usuarios</title>
     <meta name="description" content="" />
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -33,7 +33,7 @@ header("Location: ../index.php");
     <link rel="stylesheet" href="../../assets/css/bs-stepper.css" />
     <link rel="stylesheet" href="../../assets/css/tags.css" />
     <script src="../../js/sweetalert2.all.min.js"></script>
-  
+
   </head>
 
   <body>
@@ -68,7 +68,7 @@ header("Location: ../index.php");
                           <span>Administradores</span>
                           <div class="d-flex align-items-end mt-2">
                             <h4 class="mb-0 me-2">
-                              <?php echo contar("SELECT count(*) FROM system_users WHERE u_nivel='2' $extraCondition");?>
+                              <?php echo contar("SELECT count(*) FROM system_users WHERE u_nivel='2' $extraCondition"); ?>
                             </h4>
                           </div>
                           <p class="mb-0">Empresas/instituciones</p>
@@ -185,74 +185,75 @@ header("Location: ../index.php");
                           </div>
                           <div class="col mb-3">
                             <label for="telefono_user" class="form-label">Teléfono</label>
-                  
+
                             <input type="text" id="telefono_user" onInput="this.value = phoneFormat(this.value)" class="form-control">
                           </div>
 
                           <script>
                             function validarEmail(valor) {
-                              if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
-                               return true;
+                              if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)) {
+                                return true;
                               } else {
-                               return false;
+                                return false;
                               }
                             }
                           </script>
-                  
+
                         </div>
 
                         <div class="mb-3">
-                            <label for="dobLarge" class="form-label">Rol</label>
-                            <select id="rol_user" class="select2 form-select select2-hidden-accessible" data-select2-id="rol">
+                          <label for="dobLarge" class="form-label">Rol</label>
+                          <select id="rol_user" class="select2 form-select select2-hidden-accessible" data-select2-id="rol">
 
-                              <?php
-                              if ($_SESSION["u_nivel"] == '1') {
-                                echo '<option value="" data-select2-id="2">Seleccione</option>
+                            <?php
+                            if ($_SESSION["u_nivel"] == '1') {
+                              echo '<option value="" data-select2-id="2">Seleccione</option>
                                 <option value="Empresa">Empresa/Institución</option>
                                 <option value="Administrador">Administrador Epa</option>
                                 <option value="Soporte">Soporte técnico</option>';
-                              } elseif ($_SESSION["u_nivel"] == '4') {
-                                echo '<option value="" data-select2-id="2">Seleccione</option>
+                            } elseif ($_SESSION["u_nivel"] == '4') {
+                              echo '<option value="" data-select2-id="2">Seleccione</option>
                                 <option value="Soporte">Soporte técnico</option>';
-                              }
-                              /* <option value="Cajero">Cajero</option>
+                            }
+                            /* <option value="Cajero">Cajero</option>
                               <option value="Supervisor">Supervisor</option>*/
-                              ?>
-                              <option value="Empleado">Empleado</option>
-                            </select>
-                          </div>
-                          <?php if ($_SESSION["u_nivel"] == '1') { ?>
+                            ?>
+                            <option value="Empleado">Empleado</option>
+                          </select>
+                        </div>
+                        <?php if ($_SESSION["u_nivel"] == '1') { ?>
                           <section id="registroEmpresas" style="display: none;">
-                              <div class="row">
+                            <div class="row">
                               <div class="col mb-3">
                                 <label for="en_text" class="form-label">Nombre de la empresa/institución</label>
                                 <input type="text" id="en_text" class="form-control" placeholder="Ingresar nombre de la empresa o institución" />
                               </div>
                             </div>
                           </section>
-                      <?php } if($_SESSION["u_nivel"] == '1' || $_SESSION["u_nivel"] == '4'){ ?>
-                              <section id="registroEmpresasSe" style="display: none;">
-                                    <div class="row">
-                                    <div class="col mb-3">
-                                      <label for="en_select" class="form-label">Empresa/Institución</label>
-                                      <select id="en_select" class="form-control">
-                                        <option value="">Seleccione</option>
-                                        <?php
+                        <?php }
+                        if ($_SESSION["u_nivel"] == '1' || $_SESSION["u_nivel"] == '4') { ?>
+                          <section id="registroEmpresasSe" style="display: none;">
+                            <div class="row">
+                              <div class="col mb-3">
+                                <label for="en_select" class="form-label">Empresa/Institución</label>
+                                <select id="en_select" class="form-control">
+                                  <option value="">Seleccione</option>
+                                  <?php
 
-                                        $stmt = mysqli_prepare($conexion, "SELECT * FROM `system_users` WHERE u_nivel = '2' AND u_ente!='$_SESSION[u_ente]'");
-                                        $stmt->execute();
-                                        $result = $stmt->get_result();
-                                        if ($result->num_rows > 0) {
-                                          while ($row = $result->fetch_assoc()) {
-                                            echo '<option value="' . $row['u_id'] . '">' . $row['u_ente'] . '</option>';
-                                          }
-                                        }
-                                        ?>
-                                      </select>
+                                  $stmt = mysqli_prepare($conexion, "SELECT * FROM `system_users` WHERE u_nivel = '2' AND u_ente!='$_SESSION[u_ente]'");
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                      echo '<option value="' . $row['u_id'] . '">' . $row['u_ente'] . '</option>';
+                                    }
+                                  }
+                                  ?>
+                                </select>
 
-                                    </div>
-                                  </div>
-                                </section>
+                              </div>
+                            </div>
+                          </section>
                         <?php } ?>
                       </div>
                       <div class="modal-footer">
@@ -333,22 +334,22 @@ header("Location: ../index.php");
     var sn = "<?php echo $_SESSION["u_nivel"] ?>"
 
     function addNewUser() {
-    let name_user = $('#name_user').val()
-    let email_user = $('#email_user').val()
-    let rol_user = $('#rol_user').val()
-    let telefono_user = $('#telefono_user').val()
-    let en_text = '';
-    let en_select = '';
-    if (sn == '1') {
-      en_text = $('#en_text').val()
-      en_select = $('#en_select').val()
-    }
+      let name_user = $('#name_user').val()
+      let email_user = $('#email_user').val()
+      let rol_user = $('#rol_user').val()
+      let telefono_user = $('#telefono_user').val()
+      let en_text = '';
+      let en_select = '';
+      if (sn == '1') {
+        en_text = $('#en_text').val()
+        en_select = $('#en_select').val()
+      }
 
-    if(validarEmail(email_user) == false){
-      toast_s('error', 'El correo es incorrecto')
-      return;
-    }
-          $('.container-loader').show()
+      if (validarEmail(email_user) == false) {
+        toast_s('error', 'El correo es incorrecto')
+        return;
+      }
+      $('.container-loader').show()
       $.ajax({
         type: 'POST',
         url: '../../back/ajax/admi_user_list_new_user.php',
@@ -363,18 +364,18 @@ header("Location: ../index.php");
         },
         cache: false,
         success: function(msg) {
-                $('.container-loader').hide()
+          $('.container-loader').hide()
           if (msg.trim() == 'exists_u') {
             toast_s('warning', 'El usuario ya existe.')
-          }else if (msg.trim() == 'exists_t_u') {
+          } else if (msg.trim() == 'exists_t_u') {
             toast_s('warning', 'Ya se ha creado una solicitud para este usuario.')
-          }else if (msg.trim() == 'ok') {
+          } else if (msg.trim() == 'ok') {
             toast_s('success', 'Agregado correctamente.')
             tabla()
-          }else if (msg.trim() == 'accion_denegada') {
+          } else if (msg.trim() == 'accion_denegada') {
             toast_s('warning', 'Acción denegada.')
             tabla()
-          }else{
+          } else {
             console.log(msg)
           }
 
@@ -387,7 +388,7 @@ header("Location: ../index.php");
 
         }
       }).fail(function(jqXHR, textStatus, errorThrown) {
-      $('.container-loader').hide()
+        $('.container-loader').hide()
 
         toast_s('warning', 'Ocurrió un error, inténtelo nuevamente ' + errorThrown)
       });
@@ -415,7 +416,7 @@ header("Location: ../index.php");
         confirmButtonText: "Continuar",
       }).then((result) => {
         if (result.isConfirmed) {
-                $('.container-loader').show()
+          $('.container-loader').show()
           $.ajax({
             type: 'POST',
             url: '../../back/ajax/admi_user_list_manejador.php',
@@ -430,10 +431,10 @@ header("Location: ../index.php");
                 toast_s('success', 'Actualizado correctamente')
                 tabla()
               }
-                    $('.container-loader').hide()
+              $('.container-loader').hide()
             }
           }).fail(function(jqXHR, textStatus, errorThrown) {
-      $('.container-loader').hide()
+            $('.container-loader').hide()
 
             toast_s('warning', 'Ocurrió un error, inténtelo nuevamente ' + errorThrown)
           });
@@ -448,28 +449,27 @@ header("Location: ../index.php");
     <?php if ($_SESSION["u_nivel"] == '1' || $_SESSION["u_nivel"] == '4') { ?>
 
       $(document).ready(function() {
-            function viewUserType() {
-              if (sn == '1') {
-                if($("#rol_user").val() == 'Empresa'){
-                  $("#registroEmpresas").show(300);
-                }else{
-                  $("#registroEmpresas").hide(300);
-                }
-              }
-              
-              if (sn == '1' || sn == '2') {
-                if ($("#rol_user").val() == 'Empleado') {
-                  $("#registroEmpresasSe").show(300);
-                }else{
-                  $("#registroEmpresasSe").hide(300);
-                }
-              }
+        function viewUserType() {
+          if (sn == '1') {
+            if ($("#rol_user").val() == 'Empresa') {
+              $("#registroEmpresas").show(300);
+            } else {
+              $("#registroEmpresas").hide(300);
             }
-            $("#rol_user").change(viewUserType);
-        });
+          }
+
+          if (sn == '1' || sn == '2') {
+            if ($("#rol_user").val() == 'Empleado') {
+              $("#registroEmpresasSe").show(300);
+            } else {
+              $("#registroEmpresasSe").hide(300);
+            }
+          }
+        }
+        $("#rol_user").change(viewUserType);
+      });
 
     <?php }  ?>
-
   </script>
 
   </html>

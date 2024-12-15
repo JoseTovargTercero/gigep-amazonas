@@ -32,15 +32,30 @@
           'texto' => 'Gestor de compras',
           'niveles' => [1, 2, 3],
         ]],
-        'veh' => [[
-        'link' => 'veh_vehiculos',
-          'texto' => 'Vehículos',
-          'niveles' => [1, 2, 3],
-        ], [
-          'link' => 'veh_estado_flota',
-          'texto' => 'Estado de la flota',
-          'niveles' => [1, 2],
-        ]]
+        'veh' => [
+          [
+            'link' => 'veh_vehiculos',
+            'texto' => 'Vehículos',
+            'niveles' => [1, 2, 3],
+          ],
+          [
+            'link' => 'veh_estado_flota',
+            'texto' => 'Estado de la flota',
+            'niveles' => [1, 2],
+          ]
+        ],
+        'epa' => [
+          [
+            'link' => 'epa_facturacion',
+            'texto' => 'Facturación',
+            'niveles' => [1],
+          ],
+          [
+            'link' => 'epa_dash',
+            'texto' => 'Gestor',
+            'niveles' => [1],
+          ]
+        ]
       );
 
 
@@ -71,20 +86,16 @@
           }
 
 
-
-
           $stmt->execute();
           $result = $stmt->get_result();
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
 
               $modulo = $row['modulo'];
-
               if (@$pages[$row['modulo']]) {
-
                 echo '<li class="menu-item" id="' . $modulo . '">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons bx ' . $row['icono'] . '"></i>
+                  <i class="menu-icon  bx ' . $row['icono'] . '"></i>
                   <div >' . $row['nombre'] . '</div>
                 </a><ul class="menu-sub">';
 

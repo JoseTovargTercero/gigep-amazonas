@@ -26,7 +26,7 @@ if ($trimestre_pasado == 1 || $trimestre_pasado == 01) {
   <title class="go" id="title">Gestión operativa</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -686,7 +686,7 @@ if ($trimestre_pasado == 1 || $trimestre_pasado == 01) {
                       } else if (val == 2) {
                         $('#section_sectorial').hide()
                         $('#section_estrategico').show(300)
-                        }else{
+                      } else {
                         $('#section_sectorial').hide()
                         $('#section_estrategico').hide()
                       }
@@ -1134,7 +1134,7 @@ if ($trimestre_pasado == 1 || $trimestre_pasado == 01) {
               cache: false,
               success: function(msg) {
                 $('.container-loader').hide()
-        
+
                 if ("<?php echo $_SESSION['u_nivel'] ?>" != '1') {
                   window.location.href = 'go_operacion?i=' + msg;
                 } else {

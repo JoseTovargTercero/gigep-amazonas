@@ -25,7 +25,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
   <title class="com" id="title">Categorías</title>
   <meta name="description" content="" />
   <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -80,13 +80,13 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
                   <div class="card-header d-flex justify-content-between">
                     <h5>Categorías</h5>
                     <button class="btn btn-secondary add-new btn-primary ms-2" type="button" data-bs-toggle="modal"
-                          data-bs-target="#modalCenter"><span><i class="bx bx-plus me-0 me-sm-1"></i>Agregar categoría</span></button>
+                      data-bs-target="#modalCenter"><span><i class="bx bx-plus me-0 me-sm-1"></i>Agregar categoría</span></button>
 
                   </div>
                   <div class="card-body">
                     <div class="card-datatable table-responsive">
                       <div class="dataTables_wrapper dt-bootstrap5 no-footer">
-                        <table class=" table border-top dataTable no-footer d" id="DataTables" >
+                        <table class=" table border-top dataTable no-footer d" id="DataTables">
                           <thead>
                             <tr>
                               <th>Categoría</th>
@@ -110,43 +110,41 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
         <!-- Content wrapper -->
 
         <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle">Nueva categoría</h5>
-                                <button
-                                  type="button"
-                                  class="btn-close"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close"
-                                ></button>
-                              </div>
-                              <form id="form">
-                              <div class="modal-body">
-                                <div class="row">
-                                  <div class="col mb-3">
-                                    <label for="nombreCategoria" class="form-label">Nombre de la categoría</label>
-                                    <input
-                                      type="text"
-                                      id="nombreCategoria"
-                                      name="nombreCategoria"
-                                      class="form-control"
-                                      placeholder="Ingrese el nombre"
-                                    />
-                                  </div>
-                                </div>
-                                
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                                  Cancelar
-                                </button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                              </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Nueva categoría</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <form id="form">
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="nombreCategoria" class="form-label">Nombre de la categoría</label>
+                      <input
+                        type="text"
+                        id="nombreCategoria"
+                        name="nombreCategoria"
+                        class="form-control"
+                        placeholder="Ingrese el nombre" />
+                    </div>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Cancelar
+                  </button>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
 
       </div>
@@ -168,46 +166,44 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
 </body>
 
 <script>
-
-
-    function borrarCategoria(id) {
-      
-
-
-      Swal.fire({
-            title: "<strong>¿Está seguro?</strong>",
-            icon: "warning",
-            html: `Se <b>eliminará</b> la categoría. La acción es irreversible.`,
-            showCancelButton: true,
-            confirmButtonColor: "#69a5ff",
-            confirmButtonText: `Eliminar`,
-            cancelButtonText: `Cancelar`,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              $('.container-loader').show()
-              $.get("../../back/ajax/com_borrar_categoria.php", "i="+id, function(data) {
-                $('.container-loader').hide()
-                    tabla()
-                    toast_s('success', 'Se eliminó correctamente')
-              });
-            }
-          });
+  function borrarCategoria(id) {
 
 
 
-   
+    Swal.fire({
+      title: "<strong>¿Está seguro?</strong>",
+      icon: "warning",
+      html: `Se <b>eliminará</b> la categoría. La acción es irreversible.`,
+      showCancelButton: true,
+      confirmButtonColor: "#69a5ff",
+      confirmButtonText: `Eliminar`,
+      cancelButtonText: `Cancelar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $('.container-loader').show()
+        $.get("../../back/ajax/com_borrar_categoria.php", "i=" + id, function(data) {
+          $('.container-loader').hide()
+          tabla()
+          toast_s('success', 'Se eliminó correctamente')
+        });
+      }
+    });
 
 
-    }
 
-    function tabla() {
-      $('.container-loader').show()
-      $.get("../../back/ajax/com_categorias.php", "", function(data) {
-        $('.container-loader').hide()
-            $('#tbodyTable').html(data)
-      });
-    }
-    tabla()
+
+
+
+  }
+
+  function tabla() {
+    $('.container-loader').show()
+    $.get("../../back/ajax/com_categorias.php", "", function(data) {
+      $('.container-loader').hide()
+      $('#tbodyTable').html(data)
+    });
+  }
+  tabla()
 
 
   $(document).ready(function(e) {
@@ -233,7 +229,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
           $('button').attr('disabled', false);
           $('.from-control').val('');
           $('.container-loader').hide();
-          
+
           tabla();
           toast_s('success', 'Se agrego correctamente')
           $('#modalCenter').modal('toggle');
