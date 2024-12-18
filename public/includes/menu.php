@@ -47,12 +47,17 @@
         'epa' => [
           [
             'link' => 'epa_facturacion',
-            'texto' => 'Facturación',
+            'texto' => 'Facturación por caja',
             'niveles' => [1],
           ],
           [
             'link' => 'epa_dash',
-            'texto' => 'Gestor',
+            'texto' => 'Pago online',
+            'niveles' => [1],
+          ],
+          [
+            'link' => 'epa_soporte',
+            'texto' => 'Linea de comunicación',
             'niveles' => [1],
           ]
         ]

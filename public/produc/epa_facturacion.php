@@ -506,8 +506,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
                   </div>
                   <div class="details">
                     <p>G-0000</p>
-                    <p>Empresa Pública de Amazonas</p>
-                    <p>Pago de servicios <strong>(SA-HA-GC)</strong></p>
+                    <p>Contribución consciente <strong>(SA-HA-GC)</strong></p>
                     <p><?php echo date('Y-m-d h:i a') ?></p>
                     <p>*Factura <strong>315486</strong></p>
                     <div class="text-center">
@@ -518,7 +517,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
 
                   <!-- Sección de contribución 1 -->
                   <div class="section p-3">
-                    <p><strong>Contribución conciente: SANEAMIENTO AMBIENTAL.</strong></p>
+                    <p><strong>Contribución consciente: SANEAMIENTO AMBIENTAL.</strong></p>
                     <p>Descripción: <strong>Recolección de desechos.</strong></p>
                     <p>Número de contrato: <strong>J01R25.</strong></p>
                     <p>Monto: <strong>30 bs</strong></p>
