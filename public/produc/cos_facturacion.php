@@ -1035,7 +1035,7 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
 
               toast_s('success', 'Pago registrado correctamente');
               // limpiar formulario
-              pagosPendiente()
+              actualizarTabla();
               reiniciarVistas()
               document.getElementById('clearBtn').click()
 
@@ -1065,14 +1065,6 @@ if ($_SESSION["u_nivel"] != '1' && $_SESSION["u_nivel"] != '2' && $_SESSION["u_n
         $('#btn-pay').html('Procesar pago <i class="bx bx-arrow-left"></i>') // Cambia el texto del boton
         $('#btn-pay').removeClass('btn-danger').addClass('btn-primary') // Cambia el color del boton
       }
-
-
-
-
-
-
-
-
 
 
 
