@@ -24,6 +24,7 @@
 .layout-navbar-fixed .layout-wrapper:not(.layout-horizontal):not(.layout-without-menu) .layout-page {
   padding-top: 76px !important;
 }
+
 /* Default navbar */
 .layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
   padding-top: 64px !important;
@@ -38,36 +39,39 @@
 * Content
 ******************************************************************************/
 
-.demo-blocks > * {
+.demo-blocks>* {
   display: block !important;
 }
 
-.demo-inline-spacing > * {
+.demo-inline-spacing>* {
   margin: 1rem 0.375rem 0 0 !important;
 }
 
 /* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
-.demo-vertical-spacing > * {
+.demo-vertical-spacing>* {
   margin-top: 1rem !important;
   margin-bottom: 0 !important;
 }
-.demo-vertical-spacing.demo-only-element > :first-child {
+
+.demo-vertical-spacing.demo-only-element> :first-child {
   margin-top: 0 !important;
 }
 
-.demo-vertical-spacing-lg > * {
+.demo-vertical-spacing-lg>* {
   margin-top: 1.875rem !important;
   margin-bottom: 0 !important;
 }
-.demo-vertical-spacing-lg.demo-only-element > :first-child {
+
+.demo-vertical-spacing-lg.demo-only-element> :first-child {
   margin-top: 0 !important;
 }
 
-.demo-vertical-spacing-xl > * {
+.demo-vertical-spacing-xl>* {
   margin-top: 5rem !important;
   margin-bottom: 0 !important;
 }
-.demo-vertical-spacing-xl.demo-only-element > :first-child {
+
+.demo-vertical-spacing-xl.demo-only-element> :first-child {
   margin-top: 0 !important;
 }
 
@@ -98,10 +102,606 @@
   flex-direction: column;
   margin-top: 1rem;
 }
+
 .layout-demo-placeholder img {
   width: 900px;
 }
+
 .layout-demo-info {
   text-align: center;
   margin-top: 1rem;
+}
+
+
+
+.image-upload-card {
+  width: 100%;
+  aspect-ratio: 3/4;
+  /* Mantiene formato vertical */
+  max-height: 280px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  padding: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+  display: grid;
+}
+
+.dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+  background: #f9f9f9;
+}
+
+.dropzone:hover {
+  border-color: #007bff;
+  background: #f0f8ff;
+}
+
+.dz-content h6 {
+  margin: 10px 0 4px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dz-content .hint {
+  margin: 0;
+  font-size: .95rem;
+  color: #555;
+}
+
+.dz-content .types {
+  margin: 6px 0 0;
+  font-size: .85rem;
+  color: #777;
+}
+
+.preview-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  height: 100%;
+}
+
+.preview-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #fafafa;
+}
+
+.clear-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  font-size: 20px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #f5f5f5;
+}
+
+.d-none {
+  display: none !important;
+}
+
+
+
+:root,
+[data-bs-theme=light] {
+  --falcon-blue: #2c7be5;
+  --falcon-indigo: #727cf5;
+  --falcon-purple: #6b5eae;
+  --falcon-pink: #ff679b;
+  --falcon-red: #e63757;
+  --falcon-orange: #fd7e14;
+  --falcon-yellow: #f5803e;
+  --falcon-green: #00d27a;
+  --falcon-teal: #02a8b5;
+  --falcon-cyan: #27bcfd;
+  --falcon-black: #000;
+  --falcon-white: #fff;
+  --falcon-gray: #748194;
+  --falcon-gray-dark: #4d5969;
+  --falcon-gray-100: #f9fafd;
+  --falcon-gray-200: #edf2f9;
+  --falcon-gray-300: #d8e2ef;
+  --falcon-gray-400: #b6c1d2;
+  --falcon-gray-500: #9da9bb;
+  --falcon-gray-600: #748194;
+  --falcon-gray-700: #5e6e82;
+  --falcon-gray-800: #4d5969;
+  --falcon-gray-900: #344050;
+  --falcon-gray-1000: #232e3c;
+  --falcon-gray-1100: #0b1727;
+  --falcon-primary: #2c7be5;
+  --falcon-secondary: #748194;
+  --falcon-success: #00d27a;
+  --falcon-info: #27bcfd;
+  --falcon-warning: #f5803e;
+  --falcon-danger: #e63757;
+  --falcon-light: #f9fafd;
+  --falcon-dark: #0b1727;
+  --falcon-primary-rgb: 44, 123, 229;
+  --falcon-secondary-rgb: 116, 129, 148;
+  --falcon-success-rgb: 0, 210, 122;
+  --falcon-info-rgb: 39, 188, 253;
+  --falcon-warning-rgb: 245, 128, 62;
+  --falcon-danger-rgb: 230, 55, 87;
+  --falcon-light-rgb: 249, 250, 253;
+  --falcon-dark-rgb: 11, 23, 39;
+  --falcon-primary-text-emphasis: #215cac;
+  --falcon-secondary-text-emphasis: #5d6776;
+  --falcon-success-text-emphasis: #00894f;
+  --falcon-info-text-emphasis: #197aa4;
+  --falcon-warning-text-emphasis: #ac5a2b;
+  --falcon-danger-text-emphasis: #b82c46;
+  --falcon-light-text-emphasis: #646465;
+  --falcon-dark-text-emphasis: #91979e;
+  --falcon-primary-bg-subtle: #d9e7fa;
+  --falcon-secondary-bg-subtle: #e6e8ec;
+  --falcon-success-bg-subtle: #d9f8eb;
+  --falcon-info-bg-subtle: #d8f3ff;
+  --falcon-warning-bg-subtle: #fde6d8;
+  --falcon-danger-bg-subtle: #fbdbe1;
+  --falcon-light-bg-subtle: #fdfefe;
+  --falcon-dark-bg-subtle: #08101b;
+  --falcon-primary-border-subtle: #abcaf5;
+  --falcon-secondary-border-subtle: #c7cdd4;
+  --falcon-success-border-subtle: #99edca;
+  --falcon-info-border-subtle: #a9e4fe;
+  --falcon-warning-border-subtle: #fbccb2;
+  --falcon-danger-border-subtle: #f5afbc;
+  --falcon-light-border-subtle: #edf2f9;
+  --falcon-dark-border-subtle: #9da9bb;
+  --falcon-white-rgb: 255, 255, 255;
+  --falcon-black-rgb: 0, 0, 0;
+  --falcon-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --falcon-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --falcon-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --falcon-body-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --falcon-body-font-size: 1rem;
+  --falcon-body-font-weight: 400;
+  --falcon-body-line-height: 1.5;
+  --falcon-body-color: #5e6e82;
+  --falcon-body-color-rgb: 94, 110, 130;
+  --falcon-body-bg: #edf2f9;
+  --falcon-body-bg-rgb: 237, 242, 249;
+  --falcon-emphasis-color: #000;
+  --falcon-emphasis-color-rgb: 0, 0, 0;
+  --falcon-secondary-color: #344050;
+  --falcon-secondary-color-rgb: 52, 64, 80;
+  --falcon-secondary-bg: #d8e2ef;
+  --falcon-secondary-bg-rgb: 216, 226, 239;
+  --falcon-tertiary-color: #748194;
+  --falcon-tertiary-color-rgb: 116, 129, 148;
+  --falcon-tertiary-bg: #f9fafd;
+  --falcon-tertiary-bg-rgb: 249, 250, 253;
+  --falcon-heading-color: var(--falcon-secondary-color);
+  --falcon-link-color: #2c7be5;
+  --falcon-link-color-rgb: 44, 123, 229;
+  --falcon-link-decoration: none;
+  --falcon-link-hover-color: #2362b7;
+  --falcon-link-hover-color-rgb: 35, 98, 183;
+  --falcon-link-hover-decoration: underline;
+  --falcon-code-color: #ff679b;
+  --falcon-highlight-color: #5e6e82;
+  --falcon-highlight-bg: #fde6d8;
+  --falcon-border-width: 1px;
+  --falcon-border-style: solid;
+  --falcon-border-color: #d8e2ef;
+  --falcon-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --falcon-border-radius: 0.25rem;
+  --falcon-border-radius-sm: 0.25rem;
+  --falcon-border-radius-lg: 0.375rem;
+  --falcon-border-radius-xl: 1rem;
+  --falcon-border-radius-xxl: 2rem;
+  --falcon-border-radius-2xl: var(--falcon-border-radius-xxl);
+  --falcon-border-radius-pill: 50rem;
+  --falcon-box-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+  --falcon-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --falcon-box-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
+  --falcon-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  --falcon-focus-ring-width: 0.25rem;
+  --falcon-focus-ring-opacity: 0.25;
+  --falcon-focus-ring-color: rgba(44, 123, 229, 0.25);
+  --falcon-form-valid-color: #00d27a;
+  --falcon-form-valid-border-color: #00d27a;
+  --falcon-form-invalid-color: #e63757;
+  --falcon-form-invalid-border-color: #e63757;
+}
+
+[data-bs-theme=dark] {
+  color-scheme: dark;
+  --falcon-body-color: #9da9bb;
+  --falcon-body-color-rgb: 157, 169, 187;
+  --falcon-body-bg: #0b1727;
+  --falcon-body-bg-rgb: 11, 23, 39;
+  --falcon-emphasis-color: #fff;
+  --falcon-emphasis-color-rgb: 255, 255, 255;
+  --falcon-secondary-color: #d8e2ef;
+  --falcon-secondary-color-rgb: 216, 226, 239;
+  --falcon-secondary-bg: #344050;
+  --falcon-secondary-bg-rgb: 52, 64, 80;
+  --falcon-tertiary-color: #748194;
+  --falcon-tertiary-color-rgb: 116, 129, 148;
+  --falcon-tertiary-bg: #162231;
+  --falcon-tertiary-bg-rgb: 22, 34, 49;
+  --falcon-primary-text-emphasis: #abcaf5;
+  --falcon-secondary-text-emphasis: #c7cdd4;
+  --falcon-success-text-emphasis: #73e6b6;
+  --falcon-info-text-emphasis: #93defe;
+  --falcon-warning-text-emphasis: #fbc6a8;
+  --falcon-danger-text-emphasis: #f4a5b3;
+  --falcon-light-text-emphasis: #646465;
+  --falcon-dark-text-emphasis: #91979e;
+  --falcon-primary-bg-subtle: #0f2b50;
+  --falcon-secondary-bg-subtle: #292d34;
+  --falcon-success-bg-subtle: #003f25;
+  --falcon-info-bg-subtle: #0c384c;
+  --falcon-warning-bg-subtle: #562d16;
+  --falcon-danger-bg-subtle: #5c1623;
+  --falcon-light-bg-subtle: #fdfefe;
+  --falcon-dark-bg-subtle: #08101b;
+  --falcon-primary-border-subtle: #163e73;
+  --falcon-secondary-border-subtle: #3a414a;
+  --falcon-success-border-subtle: #00693d;
+  --falcon-info-border-subtle: #145e7f;
+  --falcon-warning-border-subtle: #7b401f;
+  --falcon-danger-border-subtle: #731c2c;
+  --falcon-light-border-subtle: #5e6e82;
+  --falcon-dark-border-subtle: #4d5969;
+  --falcon-heading-color: var(--falcon-secondary-color);
+  --falcon-link-color: #2c7be5;
+  --falcon-link-hover-color: #2362b7;
+  --falcon-link-color-rgb: 44, 123, 229;
+  --falcon-link-hover-color-rgb: 35, 98, 183;
+  --falcon-code-color: #ff679b;
+  --falcon-highlight-color: #9da9bb;
+  --falcon-highlight-bg: #623319;
+  --falcon-border-color: rgba(255, 255, 255, 0.05);
+  --falcon-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --falcon-form-valid-color: #66e4af;
+  --falcon-form-valid-border-color: #00d27a;
+  --falcon-form-invalid-color: #f0879a;
+  --falcon-form-invalid-border-color: #e63757;
+}
+
+:root,
+[data-bs-theme=light] {
+  --falcon-facebook: #3c5a99;
+  --falcon-google-plus: #dd4b39;
+  --falcon-twitter: #1da1f2;
+  --falcon-linkedin: #0077b5;
+  --falcon-youtube: #ff0001;
+  --falcon-github: #333333;
+  --falcon-gray-100-rgb: 249, 250, 253;
+  --falcon-gray-200-rgb: 237, 242, 249;
+  --falcon-gray-300-rgb: 216, 226, 239;
+  --falcon-gray-400-rgb: 182, 193, 210;
+  --falcon-gray-500-rgb: 157, 169, 187;
+  --falcon-gray-600-rgb: 116, 129, 148;
+  --falcon-gray-700-rgb: 94, 110, 130;
+  --falcon-gray-800-rgb: 77, 89, 105;
+  --falcon-gray-900-rgb: 52, 64, 80;
+  --falcon-gray-1000-rgb: 35, 46, 60;
+  --falcon-gray-1100-rgb: 11, 23, 39;
+  --falcon-facebook-rgb: 60, 90, 153;
+  --falcon-google-plus-rgb: 221, 75, 57;
+  --falcon-twitter-rgb: 29, 161, 242;
+  --falcon-linkedin-rgb: 0, 119, 181;
+  --falcon-youtube-rgb: 255, 0, 1;
+  --falcon-github-rgb: 51, 51, 51;
+  --falcon-gray-link-hover-100: RGBA(250, 251, 253, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-200: RGBA(241, 245, 250, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-300: RGBA(224, 232, 242, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-400: RGBA(197, 205, 219, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-500: RGBA(126, 135, 150, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-600: RGBA(93, 103, 118, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-700: RGBA(75, 88, 104, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-800: RGBA(62, 71, 84, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-900: RGBA(42, 51, 64, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-1000: RGBA(28, 37, 48, var(--falcon-link-opacity, 1)) !important;
+  --falcon-gray-link-hover-1100: RGBA(9, 18, 31, var(--falcon-link-opacity, 1)) !important;
+  --em-rgb-background: var(--falcon-tertiary-bg);
+  --falcon-quaternary-bg: #fff;
+  --falcon-quaternary-bg-rgb: 255, 255, 255;
+  --falcon-emphasis-bg: #fff;
+  --falcon-emphasis-bg-rgb: 255, 255, 255;
+  --falcon-blockquote-footer-color: #748194;
+  --falcon-hr-opacity: 1;
+  --falcon-mark-bg: #fcf8e3;
+  --falcon-font-base: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --falcon-btn-disabled-border-color: transparent;
+  --falcon-btn-reveal-color: #748194;
+  --falcon-btn-reveal-hover-color: #5e6e82;
+  --falcon-btn-reveal-focus-bg: #e6e6e6;
+  --falcon-btn-reveal-hover-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1),
+    0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07),
+    0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --falcon-btn-reveal-focus-border-color: #dfdfdf;
+  --falcon-btn-falcon-background: var(--falcon-quaternary-bg);
+  --falcon-btn-disabled-color: #4d5969;
+  --falcon-btn-falcon-box-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --falcon-btn-falcon-hover-box-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.1), 0 3px 9px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --falcon-btn-falcon-default-color: var(--falcon-gray-800);
+  --falcon-btn-falcon-default-hover-color: #404a57;
+  --falcon-btn-falcon-default-active-background: #e6e6e6;
+  --falcon-btn-falcon-default-active-border: #404a57;
+  --falcon-btn-active-border-color: transparent;
+  --falcon-btn-falcon-primary-color: var(--falcon-primary);
+  --falcon-btn-falcon-primary-hover-color: #2566be;
+  --falcon-btn-falcon-primary-active-background: #d5e5fa;
+  --falcon-btn-falcon-primary-active-color: #2566be;
+  --falcon-btn-falcon-secondary-color: var(--falcon-secondary);
+  --falcon-btn-falcon-secondary-hover-color: #606b7b;
+  --falcon-btn-falcon-secondary-active-background: #e3e6ea;
+  --falcon-btn-falcon-secondary-active-color: #606b7b;
+  --falcon-btn-falcon-success-color: var(--falcon-success);
+  --falcon-btn-falcon-success-hover-color: #00ae65;
+  --falcon-btn-falcon-success-active-background: #ccf6e4;
+  --falcon-btn-falcon-success-active-color: #00ae65;
+  --falcon-btn-falcon-info-color: var(--falcon-info);
+  --falcon-btn-falcon-info-hover-color: #209cd2;
+  --falcon-btn-falcon-info-active-background: #d4f2ff;
+  --falcon-btn-falcon-info-active-color: #209cd2;
+  --falcon-btn-falcon-warning-color: var(--falcon-warning);
+  --falcon-btn-falcon-warning-hover-color: #cb6a33;
+  --falcon-btn-falcon-warning-active-background: #fde6d8;
+  --falcon-btn-falcon-warning-active-color: #cb6a33;
+  --falcon-btn-falcon-danger-color: var(--falcon-danger);
+  --falcon-btn-falcon-danger-hover-color: #bf2e48;
+  --falcon-btn-falcon-danger-active-background: #fad7dd;
+  --falcon-btn-falcon-danger-active-color: #bf2e48;
+  --falcon-btn-falcon-light-color: var(--falcon-light);
+  --falcon-btn-falcon-light-hover-color: #cfd0d2;
+  --falcon-btn-falcon-light-active-background: #fefeff;
+  --falcon-btn-falcon-light-active-color: #cfd0d2;
+  --falcon-btn-falcon-dark-color: var(--falcon-dark);
+  --falcon-btn-falcon-dark-hover-color: #091320;
+  --falcon-btn-falcon-dark-active-background: #ced1d4;
+  --falcon-btn-falcon-dark-active-color: #091320;
+  --falcon-input-btn-focus-color: rgba(44, 123, 229, 0.25);
+  --falcon-btn-link-color: var(--falcon-link-color);
+  --falcon-btn-link-hover-color: #2362b7;
+  --falcon-btn-disabled-color: #748194;
+  --falcon-input-focus-border-color-global: #96bdf2;
+  --falcon-input-placeholder-color-global: var(--falcon-gray-400);
+  --falcon-bg-navbar-glass: rgba(237, 242, 249, 0.96);
+  --falcon-navbar-vertical-default-bg-color: var(--falcon-bg-navbar-glass);
+  --falcon-navbar-vertical-default-link-color: #5e6e82;
+  --falcon-navbar-vertical-default-link-hover-color: #232e3c;
+  --falcon-navbar-vertical-default-link-active-color: #2c7be5;
+  --falcon-navbar-vertical-default-link-disable-color: #b6c1d2;
+  --falcon-navbar-vertical-default-hr-color: rgba(0, 0, 0, 0.08);
+  --falcon-navbar-vertical-default-scrollbar-color: rgba(116, 129, 148, 0.3);
+  --falcon-navbar-vertical-default-label-color: var(--falcon-gray-500);
+  --falcon-navbar-vertical-inverted-bg-color: #232e3c;
+  --falcon-navbar-vertical-inverted-link-color: #9da9bb;
+  --falcon-navbar-vertical-inverted-link-hover-color: #edf2f9;
+  --falcon-navbar-vertical-inverted-link-active-color: #edf2f9;
+  --falcon-navbar-vertical-inverted-link-disable-color: #5e6e82;
+  --falcon-navbar-vertical-inverted-hr-color: rgba(255, 255, 255, 0.08);
+  --falcon-navbar-vertical-inverted-scrollbar-color: #b6c1d2;
+  --falcon-navbar-vertical-inverted-label-color: #5e6e82;
+  --falcon-navbar-vertical-vibrant-bg-image: linear-gradient(-45deg, rgba(0, 160, 255, 0.86), #0048a2), url(../img/generic/bg-navbar.png);
+  --falcon-navbar-vertical-vibrant-link-color: rgba(255, 255, 255, 0.75);
+  --falcon-navbar-vertical-vibrant-link-hover-color: #fff;
+  --falcon-navbar-vertical-vibrant-link-active-color: #fff;
+  --falcon-navbar-vertical-vibrant-link-disable-color: rgba(255, 255, 255, 0.45);
+  --falcon-navbar-vertical-vibrant-hr-color: rgba(255, 255, 255, 0.2);
+  --falcon-navbar-vertical-vibrant-scrollbar-color: #b6c1d2;
+  --falcon-navbar-vertical-vibrant-label-color: rgba(255, 255, 255, 0.4);
+  --falcon-navbar-vertical-card-bg-color: #fff;
+  --falcon-navbar-vertical-card-link-color: var(--falcon-gray-700);
+  --falcon-navbar-vertical-card-link-hover-color: var(--falcon-gray-900);
+  --falcon-navbar-vertical-card-link-active-color: var(--falcon-primary);
+  --falcon-navbar-vertical-card-link-disable-color: var(--falcon-gray-400);
+  --falcon-navbar-vertical-card-hr-color: rgba(0, 0, 0, 0.08);
+  --falcon-navbar-vertical-card-scrollbar-color: rgba(116, 129, 148, 0.3);
+  --falcon-navbar-vertical-card-label-color: var(--falcon-gray-500);
+  --falcon-avatar-status-border-color: var(--falcon-quaternary-bg);
+  --falcon-avatar-name-bg: #344050;
+  --falcon-avatar-button-bg: var(--falcon-gray-400);
+  --falcon-avatar-button-hover-bg: var(--falcon-gray-500);
+  --falcon-notification-bg: var(--falcon-emphasis-bg);
+  --falcon-notification-title-bg: #f9fafd;
+  --falcon-notification-unread-bg: var(--falcon-gray-200);
+  --falcon-notification-unread-hover-bg: #dae4f3;
+  --falcon-notification-indicator-border-color: var(--falcon-body-bg);
+  --falcon-kanban-bg: #f9fafd;
+  --falcon-kanban-header-bg: var(--falcon-kanban-bg);
+  --falcon-kanban-item-bg: #fff;
+  --falcon-kanban-item-color: var(--falcon-gray-900);
+  --falcon-kanban-btn-add-hover-bg: var(--falcon-gray-200);
+  --falcon-kanban-draggable-source-dragging-bg: var(--falcon-body-bg);
+  --falcon-kanban-bg-attachment-bg: var(--falcon-gray-300);
+  --falcon-kanban-footer-color: var(--falcon-gray-600);
+  --falcon-kanban-nav-link-card-details-color: var(--falcon-gray-700);
+  --falcon-kanban-nav-link-card-details-hover-bg: #edf2f9;
+  --falcon-bg-shape-bg: #4695ff;
+  --falcon-bg-shape-bg-ltd: linear-gradient(-45deg, #4695ff, #1970e2);
+  --falcon-bg-shape-bg-dtl: linear-gradient(-45deg, #1970e2, #4695ff);
+  --falcon-line-chart-gradient: linear-gradient(-45deg, #014ba7, #0183d0);
+  --falcon-card-gradient: linear-gradient(-45deg, #1970e2, #4695ff);
+  --falcon-progress-gradient: linear-gradient(-45deg, #1970e2, #4695ff);
+  --falcon-bg-circle-shape: none;
+  --falcon-bg-circle-shape-bg: #4695ff;
+  --falcon-modal-shape-header: linear-gradient(-45deg, #1970e2, #4695ff);
+  --falcon-modal-shape-header-bg: #4494ff;
+  --fc-button-bg-color: #344050;
+  --fc-button-border-color: #344050;
+  --fc-button-hover-bg-color: #0b1727;
+  --fc-button-hover-border-color: #0b1727;
+  --fc-button-active-bg-color: #0b1727;
+  --fc-button-active-border-color: #0b1727;
+  --fc-button-list-day-cushion: var(--falcon-quaternary-bg);
+  --fc-highlight-color: rgba(var(--falcon-primary-rgb), 0.1);
+  --falcon-flatpickr-calendar-bg: var(--falcon-quaternary-bg);
+  --falcon-leaflet-bar-bg: #fff;
+  --falcon-leaflet-popup-content-wrapper-bg: var(--falcon-quaternary-bg);
+  --falcon-choices-item-selectable-highlighted-bg: #fff;
+  --falcon-choices-item-has-no-choices-bg: var(--falcon-quaternary-bg);
+  --falcon-bg-choices-close-button: #edf2f9;
+  --falcon-thumbnail-bg-global: #fff;
+  --falcon-thumbnail-bg-global: #fff;
+  --falcon-chat-contact-bg: var(--falcon-emphasis-bg);
+  --falcon-tinymce-bg: var(--falcon-quaternary-bg);
+  --falcon-slick-arrow-bg: rgba(255, 255, 255, 0.8);
+  --falcon-react-datepicker-bg: #fff;
+  --falcon-react-datepicker-header-bg: #edf2f9;
+  --falcon-star-rating-bg-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFdElEQVR4nO2aXWxURRTH/2dut58Imho1SgStuit+vBo0BkgkRjDog+VBiJEXqJhKK21x+7EdUu5u2W1Uqi8Qo4YQY6gQDQlRn9RENGoMD0a7RCzGRCJGBLRF9mOOD+waKHe7e2f23mt0f4/zceY/Z2fmzJm7QI0aNWr8j6EgBu3sHG9oXHC2gxQvJ/CUhbpUPD5wMggtwv8hmZrmn3mHmF8G4XEm6s5R/kinlPP91xKAA7YN2A8CeHRW8eLmrOjwWwsQgAMYqs+xnLGls3O8wW89vjqgp1/eDWC1YyXhxqYFvz/ppx7AZwcIsnrmbMDUK6X0V5NfA/VJuRDgdWWa3Tmds1b5IqiAf97OUReAunLNCOx4RniFL/eALimvrs+KnwDMq6yHWJq0Bz/3VFRxJD8GabgY4iqcPABWvd6puRzPV4CUsnEmK6YA3OCiG1tKRRIJecwrXUU8XwHTGbEe7iYPAJQXYqsXeq4YyEvjUkoxkxXfAbhDo/uFOrYWxeMDv1Rb16V4ugJmctYa6E0eABpyItdZTT1OeLwFDEMa02YpZeWHpwaeOaBncOQhMJYamrnmvMdJUtXOgI0bd4daW0+25S0rAoV7iLiHgWqkuDkChjik9ibl8EmAuAo2/8G1A7ZKea24IMJkcQRAmJkiBIQBtAGwqiluNgScU4w0EU2CkWZSk8ycnleP76WUf2nadCYajbfmrfwDxIWJgiMAhQG06k7AQxSAEwAmiTnNRJMEMWkxpePx/lNzrRpHB7wwOLJcMR+Cm9vbv5cZAK81h1S3lFLNrnQ8BBVjF/4bkweAZgDPnc+IJ5wqS0QBDnsoKBAYdLtTubMDCF95qiYAhMUfOpY7FSqlOgCc9lSRjzDR86MjsS+d6hwdMBaX3zCrlQDOeKrMBwiIpnYMvVSqvuRNMBWXXwPiYQB/eKLMBxgY3mnHRudqM+dVOGkPfsEKjwCYrqoyHyAgnrKHRipoV57CveAwgCZjZT7AwFjKHuqr5Npc8VW4r3/7ShAdAuD7xwuXjCftoa5KcwZXuUDv4MgqYn4XQEhLmscw8+5UPPaMm4TJVTqc2jF0GERrAeRcq/MceqOlnje7zRa10uHege3tBHobgXxdvhIm7DuRjjw9MbE277av1gRS9vAEwE8BqGpurgVhf0ud2qAz+YvdDegb3L4BTK+b2DCBgffO/np9+549m7K6NoweMD795KOj9y9bcRsB95rY0SRTp+qW7drV/aeJEeM9TMzvm9rQg48mEv2/mVoxP8RYLDa2oYWor4oVYwuEu6qgQwOOtLfvN36DrEIY4yXmNrRobGv79hZTI0YOKPwCEVMRurBFxqvPyAGLw+lbEWBuoBCwAwhB7f/i+GS8/YwcwBzY/i8S7AoILgIUMY8EZluAzZegIY2Fc0gbbQdc9DwHFgGKCFZGP4K2AwoxuFGz+xkCehFSNxHzKoCO6uowjQRl/7dXCs0YnCXmVwWH7Evu8T9LKT+Yzoj1BNggLHRl0fAc0ncAiyVuHl8INKEI0aQdOz67rvDRcm9394sToabpLhBHAVxVkV02c4D2e0DfwMi+Cv76CoCPKEU9Y4nYZ5Xa7pHyOpEVwwA2oXzKfmHqWKRF90FEewVUkAMcZ/C2lB076PadbkzKUwCejUblK3kSO0FYM0fzhkXh9M0AptyMUcQkDJY6AE8D2NIcUktS9vABk7+0JBJyMhmPPcYKywEu9cGWQ3nrnO4Y2g5gYN+sogyIU5mQakvasXEpZUbX9mxSidjHzSG+jxjrAPx4eS29afIwor0FWkJq9HzOOsvMq5n5B0vx2OioPKFrrxyFg/ItKeXBmazoAGMFQEea6/MlP3zWqFGjRo0y/A3lxcMNXfCjjAAAAABJRU5ErkJggg==");
+  --falcon-theme-wizard-nav-item-circle-bg: var(--falcon-quaternary-bg);
+  --falcon-toast-bg-global: rgba(255, 255, 255, 0.85);
+  --falcon-toast-header-bg-global: rgba(255, 255, 255, 0.85);
+  --falcon-card-span-img-bg: var(--falcon-quaternary-bg);
+  --falcon-card-span-img-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --falcon-card-span-img-hover-box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.175);
+  --falcon-setting-toggle-shadow: 0 -7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+  --falcon-scrollbar-bg: rgba(182, 193, 210, 0.55);
+  --falcon-simplebar-bg: #b6c1d2;
+  --falcon-nav-pills-falcon-active-bg-color: var(--falcon-quaternary-bg);
+  --falcon-btn-disabled-custom-background: rgba(249, 250, 253, 0.55);
+  --falcon-btn-disabled-custom-color: rgba(11, 23, 39, 0.3);
+  --falcon-dropdown-bg-global: #fff;
+  --falcon-dropdown-link-hover-color-global: #2a3441;
+  --falcon-dropdown-link-hover-bg-global: #f9fafd;
+  --falcon-popover-header-bg-global: #f9fafd;
+  --falcon-toast-bg-global: rgba(255, 255, 255, 0.85);
+  --falcon-toast-header-bg-global: rgba(255, 255, 255, 0.85);
+  --falcon-list-group-bg-global: var(--falcon-emphasis-bg);
+  --falcon-accordion-btn-color-global: #5e6e82;
+  --falcon-alert-link-color: #2c7be5;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Badge                                   */
+/* -------------------------------------------------------------------------- */
+.badge-subtle-primary {
+  color: var(--falcon-primary-text-emphasis);
+  background-color: var(--falcon-primary-bg-subtle);
+}
+
+.badge-subtle-primary[href]:hover, .badge-subtle-primary[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-primary-text-emphasis);
+  background-color: var(--falcon-primary-bg-subtle);
+}
+
+.badge-subtle-secondary {
+  color: var(--falcon-secondary-text-emphasis);
+  background-color: var(--falcon-secondary-bg-subtle);
+}
+
+.badge-subtle-secondary[href]:hover, .badge-subtle-secondary[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-secondary-text-emphasis);
+  background-color: var(--falcon-secondary-bg-subtle);
+}
+
+.badge-subtle-success {
+  color: var(--falcon-success-text-emphasis);
+  background-color: var(--falcon-success-bg-subtle);
+}
+
+.badge-subtle-success[href]:hover, .badge-subtle-success[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-success-text-emphasis);
+  background-color: var(--falcon-success-bg-subtle);
+}
+
+.badge-subtle-info {
+  color: var(--falcon-info-text-emphasis);
+  background-color: var(--falcon-info-bg-subtle);
+}
+
+.badge-subtle-info[href]:hover, .badge-subtle-info[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-info-text-emphasis);
+  background-color: var(--falcon-info-bg-subtle);
+}
+
+.badge-subtle-warning {
+  color: var(--falcon-warning-text-emphasis);
+  background-color: var(--falcon-warning-bg-subtle);
+}
+
+.badge-subtle-warning[href]:hover, .badge-subtle-warning[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-warning-text-emphasis);
+  background-color: var(--falcon-warning-bg-subtle);
+}
+
+.badge-subtle-danger {
+  color: var(--falcon-danger-text-emphasis);
+  background-color: var(--falcon-danger-bg-subtle);
+}
+
+.badge-subtle-danger[href]:hover, .badge-subtle-danger[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-danger-text-emphasis);
+  background-color: var(--falcon-danger-bg-subtle);
+}
+
+.badge-subtle-light {
+  color: var(--falcon-light-text-emphasis);
+  background-color: var(--falcon-light-bg-subtle);
+}
+
+.badge-subtle-light[href]:hover, .badge-subtle-light[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-light-text-emphasis);
+  background-color: var(--falcon-light-bg-subtle);
+}
+
+.badge-subtle-dark {
+  color: var(--falcon-dark-text-emphasis);
+  background-color: var(--falcon-dark-bg-subtle);
+}
+
+.badge-subtle-dark[href]:hover, .badge-subtle-dark[href]:focus {
+  text-decoration: none;
+  color: var(--falcon-dark-text-emphasis);
+  background-color: var(--falcon-dark-bg-subtle);
+}
+
+.btn-circulo {
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  font-size: 20px !important;
+}
+
+
+
+div.dataTables_paginate {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.paginate_button {
+  border: none !important;
+  background: none !important;
+  cursor: pointer;
+  font-size: 1.3rem;
 }

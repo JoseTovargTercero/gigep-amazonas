@@ -5,9 +5,6 @@ include('../../back/config/funcione_globales.php');
 if ($_SESSION["u_nivel"] != '1') {
   header("Location: ../index.php");
 }
-
-
-
 ?>
 
 

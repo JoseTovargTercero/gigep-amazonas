@@ -44,22 +44,32 @@
             'niveles' => [1, 2],
           ]
         ],
-        'epa' => [
+        'cos' => [
           [
-            'link' => 'epa_facturacion',
+            'link' => 'cos_facturacion',
             'texto' => 'Facturación por caja',
             'niveles' => [1],
           ],
           [
-            'link' => 'epa_dash',
+            'link' => 'cos_pagos_pendientes',
+            'texto' => 'Pagos pendiente',
+            'niveles' => [1],
+          ],
+          [
+            'link' => 'cos_pagos_realizados',
+            'texto' => 'Pagos procesados',
+            'niveles' => [1],
+          ],
+          /*    [
+            'link' => 'cos_dash',
             'texto' => 'Pago online',
             'niveles' => [1],
           ],
           [
-            'link' => 'epa_soporte',
+            'link' => 'cos_soporte',
             'texto' => 'Linea de comunicación',
             'niveles' => [1],
-          ]
+          ]*/
         ]
       );
 
